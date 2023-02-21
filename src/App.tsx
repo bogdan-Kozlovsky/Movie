@@ -1,55 +1,48 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
-import axios from 'axios';
-
+import Selector from './components/Selector/Selector';
 import TrendingButton from './components/TrendingButton';
-
-interface Movie {
-  id: number;
-  title: string;
-  poster_path: string;
-}
-
-const API_KEY = '75df7ca909e962c1330641811fad3003';
-// const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
-const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
+import { useAppSelector } from './hooks/useAppSelector';
+import { useAppDispatch } from './hooks/useDispatch';
+import { getTrending } from './store/features/trending/asyncThunk/getTrending';
+import {
+  selectMediaType,
+  selectTimeWindow,
+  selectTrending,
+} from './store/features/trending/selectors';
 
 const App = (): React.ReactElement => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [value, setValue] = useState('all');
+  const movies = useAppSelector(selectTrending);
+  const mediaType = useAppSelector(selectMediaType);
+  const timeWindow = useAppSelector(selectTimeWindow);
+
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const fetchMovies = async (): Promise<void> => {
-      try {
-        const response = await axios.get(
-          `https://api.themoviedb.org/3/trending/${value}/day?api_key=${API_KEY}&page=2`,
-        );
-
-        console.log(response.data);
-        setMovies(response.data.results);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchMovies();
-  }, [value]);
+    dispatch(getTrending({ mediaType, timeWindow }));
+  }, [timeWindow, mediaType]);
 
   return (
-    <div>
-      <TrendingButton setValue={setValue} />
-      <h1>Popular Movies</h1>
-      <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {movies.map(movie => (
-          <li key={movie.id} style={{ width: '50%' }}>
-            <img
-              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-              alt={movie.title}
-            />
-            <h2>{movie.title}</h2>
-          </li>
-        ))}
-      </ul>
+    <div className="container">
+      <div className="content">
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <h1 style={{ marginRight: '15px' }}>У тренді</h1>
+          <Selector />
+          <TrendingButton />
+        </div>
+        <ul style={{ display: 'flex', overflowX: 'scroll' }}>
+          {movies.map(movie => (
+            <li key={movie.id} style={{ width: '33%', margin: '10px' }}>
+              <img
+                style={{ objectFit: 'cover', height: '200px' }}
+                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                alt={movie.title}
+              />
+              <h2>{movie.title || movie.name}</h2>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

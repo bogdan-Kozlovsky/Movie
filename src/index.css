@@ -1,4 +1,10 @@
+@import "assets/styles/variables.scss";
+@import 'normalize.css';
+
+
 body {
+  background: var(--color-background);
+  padding: 150px 0 50px;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +16,16 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.content {
+  padding: 0 10px;
+  background-color: var(--color-white);
+  color: var(--color-dark);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
 }

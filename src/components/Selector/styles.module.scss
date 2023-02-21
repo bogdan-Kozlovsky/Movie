@@ -1,0 +1,32 @@
+.selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.day {
+  background-color: #eee;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+}
+
+.week {
+  background-color: #eee;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+// normalize
+ul {
+  list-style: none;
+}

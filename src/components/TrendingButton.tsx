@@ -1,12 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
 
+import { useAppDispatch } from '../hooks/useDispatch';
+import { setMediaType } from '../store/features/trending/slices';
+
 import styles from './styles.module.scss';
 
 const data = [{ value: 'All' }, { value: 'Movie' }, { value: 'TV' }, { value: 'Person' }];
 
-const TrendingButton: React.FC<any> = ({ setValue }: any) => {
+const TrendingButton = (): React.ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent): void => {
@@ -23,8 +28,7 @@ const TrendingButton: React.FC<any> = ({ setValue }: any) => {
   }, [ref]);
 
   const handleMenuClick = (type: string): void => {
-    setValue(type);
-    // Do something with the selected type
+    dispatch(setMediaType(type));
     setIsOpen(false);
   };
 
