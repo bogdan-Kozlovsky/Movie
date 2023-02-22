@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 
+import Banner from './components/Banner/Banner';
+import Header from './components/Header/Header';
 import Selector from './components/Selector/Selector';
 import TrendingButton from './components/TrendingButton';
 import { useAppSelector } from './hooks/useAppSelector';
 import { useAppDispatch } from './hooks/useDispatch';
+import { selectLanguageValue } from './store/features/language/selectors';
 import { getTrending } from './store/features/trending/asyncThunk/getTrending';
 import {
   selectMediaType,
@@ -15,16 +18,22 @@ const App = (): React.ReactElement => {
   const movies = useAppSelector(selectTrending);
   const mediaType = useAppSelector(selectMediaType);
   const timeWindow = useAppSelector(selectTimeWindow);
+  const selectedLanguage = useAppSelector(selectLanguageValue);
 
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(getTrending({ mediaType, timeWindow }));
-  }, [timeWindow, mediaType]);
+    dispatch(getTrending({ mediaType, timeWindow, languageValue: selectedLanguage }));
+  }, [timeWindow, mediaType, selectedLanguage]);
 
   return (
-    <div className="container">
-      <div className="content">
+    <>
+      <Header />
+      <div className="container">
+        <div style={{ marginTop: '100px' }}>
+          <Banner />
+        </div>
+
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <h1 style={{ marginRight: '15px' }}>У тренді</h1>
           <Selector />
@@ -43,7 +52,7 @@ const App = (): React.ReactElement => {
           ))}
         </ul>
       </div>
-    </div>
+    </>
   );
 };
 
