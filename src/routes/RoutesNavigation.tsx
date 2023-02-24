@@ -6,7 +6,7 @@ import { Home } from '../pages/home/Home';
 import { Login } from '../pages/login/Login';
 import { PATH } from '../utils/enum/paths';
 
-export const RoutesNav = memo(() => (
+const RoutesNavigation = memo(() => (
   <div className="container">
     <Routes>
       <Route path={PATH.LOGIN} element={<Login />} />
@@ -14,3 +14,5 @@ export const RoutesNav = memo(() => (
     </Routes>
   </div>
 ));
+
+export { RoutesNavigation };

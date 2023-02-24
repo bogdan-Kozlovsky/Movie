@@ -8,7 +8,7 @@ export type RequestBodyType = {
   request_token: string | null;
 };
 
-export const setUser = createAsyncThunk('setUser', async (body: RequestBodyType) => {
+export const setLoginUser = createAsyncThunk('setUser', async (body: RequestBodyType) => {
   const response = await authenticationApi.setUser(body);
 
   console.log(response.data);

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 
-import { InitializingLoader } from './components/InitializingLoader/InitializingLoader';
-import Layout from './components/Layout/Layout';
+import { InitializingLoader } from './components/initializingLoader/InitializingLoader';
+import Layout from './components/layout/Layout';
 import { useAppSelector } from './hooks/useAppSelector';
 import { useAppDispatch } from './hooks/useDispatch';
-import { RoutesNav } from './routes/Routes';
+import { RoutesNavigation } from './routes/RoutesNavigation';
 import { getToken } from './store/features/authentication/asyncThunk/getToken';
 import { selectAppInitialized } from './store/features/global/selectors';
 
@@ -18,12 +18,12 @@ const App = (): React.ReactElement => {
   }, []);
 
   // if (!initialized) {
-  //   return <InitializingLoader />;
+  //   return <initializingLoader />;
   // }
 
   return (
     <Layout>
-      <RoutesNav />
+      <RoutesNavigation />
     </Layout>
   );
 };

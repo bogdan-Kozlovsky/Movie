@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { useAppDispatch } from '../../hooks/useDispatch';
-import { setUser } from '../../store/features/authentication/asyncThunk/setUser';
+import { setLoginUser } from '../../store/features/authentication/asyncThunk/setLoginUser';
 
 import styles from './styles.module.scss';
 
@@ -17,7 +17,7 @@ const Login = (): React.ReactElement => {
     const requestToken = localStorage.getItem('requestToken');
     const data = { username, password, request_token: requestToken };
 
-    dispatch(setUser(data));
+    dispatch(setLoginUser(data));
   };
 
   return (

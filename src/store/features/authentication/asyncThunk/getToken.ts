@@ -8,6 +8,4 @@ export const getToken = createAsyncThunk('getToken', async (_, { dispatch }) => 
   const response: AxiosResponse<GetTokenResponseType> = await authenticationApi.token();
 
   localStorage.setItem('requestToken', response.data.request_token);
-
-  console.log(response.data);
 });

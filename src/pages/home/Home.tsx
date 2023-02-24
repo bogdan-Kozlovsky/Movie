@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
-import Banner from '../../components/Banner/Banner';
-import Selector from '../../components/Selector/Selector';
+import Banner from '../../components/banner/Banner';
+import Selector from '../../components/selector/Selector';
 import TrendingButton from '../../components/TrendingButton';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { useAppDispatch } from '../../hooks/useDispatch';
@@ -21,10 +21,6 @@ const Home = (): React.ReactElement => {
 
   const dispatch = useAppDispatch();
 
-  // useEffect(() => {
-  //   dispatch(getToken());
-  // }, []);
-
   useEffect(() => {
     dispatch(getTrending({ mediaType, timeWindow, languageValue: selectedLanguage }));
   }, [timeWindow, mediaType, selectedLanguage]);
@@ -32,7 +28,7 @@ const Home = (): React.ReactElement => {
   return (
     <div>
       <div className="container">
-        <div style={{ marginTop: '100px' }}>
+        <div>
           <Banner />
         </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>

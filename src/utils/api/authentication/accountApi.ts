@@ -1,4 +1,4 @@
-import { RequestBodyType } from '../../../store/features/authentication/asyncThunk/setUser';
+import { RequestBodyType } from '../../../store/features/authentication/asyncThunk/setLoginUser';
 import { instance } from '../config';
 
 export const authenticationApi = {
