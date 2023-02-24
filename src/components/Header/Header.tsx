@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { NavLink } from 'react-router-dom';
+
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 
 import styles from './styles.module.scss';
@@ -11,6 +13,11 @@ const Header = (): React.ReactElement => {
     setIsVisible(!isVisible);
   };
 
+  const activeStyle = {
+    textDecoration: 'underline',
+  };
+  const activeClassName = 'underline';
+
   return (
     <div className={styles.header}>
       <div>
@@ -21,12 +28,31 @@ const Header = (): React.ReactElement => {
         </div>
         <LanguageSelect />
 
-        <div className={`${styles.block} ${isVisible ? styles.visible : ''}`}>
-          <div className="container">
-            <input type="text" placeholder="Пошук..." />
-            <button>Пошук</button>
-          </div>
-        </div>
+        <ul>
+          <li>
+            <NavLink
+              to="/"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              Login
+            </NavLink>
+          </li>
+          {/* <li> */}
+          {/*  <NavLink */}
+          {/*    to="/home" */}
+          {/*    className={({ isActive }) => (isActive ? activeClassName : undefined)} */}
+          {/*  > */}
+          {/*    Home */}
+          {/*  </NavLink> */}
+          {/* </li> */}
+        </ul>
+
+        {/* <div className={`${styles.block} ${isVisible ? styles.visible : ''}`}> */}
+        {/*  <div className="container"> */}
+        {/*    <input type="text" placeholder="Пошук..." /> */}
+        {/*    <button>Пошук</button> */}
+        {/*  </div> */}
+        {/* </div> */}
       </div>
     </div>
   );
