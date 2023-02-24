@@ -6,6 +6,7 @@ import Selector from './components/Selector/Selector';
 import TrendingButton from './components/TrendingButton';
 import { useAppSelector } from './hooks/useAppSelector';
 import { useAppDispatch } from './hooks/useDispatch';
+import { getAccount } from './store/features/account/asyncThunk/getAccount';
 import { selectLanguageValue } from './store/features/language/selectors';
 import { getTrending } from './store/features/trending/asyncThunk/getTrending';
 import {
@@ -21,6 +22,10 @@ const App = (): React.ReactElement => {
   const selectedLanguage = useAppSelector(selectLanguageValue);
 
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getAccount());
+  }, []);
 
   useEffect(() => {
     dispatch(getTrending({ mediaType, timeWindow, languageValue: selectedLanguage }));
