@@ -1,0 +1,76 @@
+.dropdownButton {
+  background-color: #28a745;
+  margin: 0 0 0 20px;
+  border-color: #28a745;
+
+  &:hover {
+    background-color: #620606;
+    border-color: #1e7e34;
+  }
+}
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  min-width: 160px;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15), 0 0.1rem 0.3rem rgba(0, 0, 0, 0.08);
+
+  &.show {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    animation-name: fadeInUp;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+  }
+
+  .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    color: #fff;
+    background-color: #007bff;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -1rem, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1rem, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
