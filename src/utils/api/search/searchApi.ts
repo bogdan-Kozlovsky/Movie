@@ -13,8 +13,8 @@ export const searchApi = {
   company(query: string) {
     return instance.get(`search/company?query=${query}`);
   },
-  person(query: string) {
-    return instance.get(`search/person?query=${query}`);
+  person(query: string | null, page: number) {
+    return instance.get(`search/person?query=${query}&page=${page}`);
   },
   tv(query: string) {
     return instance.get(`search/tv?query=${query}`);

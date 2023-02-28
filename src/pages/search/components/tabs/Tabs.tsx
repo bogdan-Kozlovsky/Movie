@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { Movies } from '../movies/Movies';
+import { Person } from '../person/Person';
 
 import styles from './styles.module.scss';
 import { TabPropsType, TabsType } from './types';
@@ -25,7 +26,7 @@ const tabs = [
   },
   {
     label: 'People',
-    content: <div>Content for Tab 2</div>,
+    content: <Person />,
   },
   {
     label: 'TV Show',

@@ -6,14 +6,13 @@ import icon from '../../../../assets/icon/errorImage.svg';
 import { Paginator } from '../../../../components/paginator/Paginator';
 import { useAppSelector } from '../../../../hooks/useAppSelector';
 import { useAppDispatch } from '../../../../hooks/useDispatch';
-import { searchMovies } from '../../../../store/features/search/asyncThunk/searchMovies';
+import { searchMovies, setPageMovies } from '../../../../store';
 import {
   selectMovies,
   selectMoviesPage,
   selectMoviesTotalPage,
   selectMoviesTotalResult,
 } from '../../../../store/features/search/selectors';
-import { setPage } from '../../../../store/features/search/slices';
 
 import styles from './styles.module.scss';
 
@@ -29,7 +28,7 @@ const Movies = (): React.ReactElement => {
   const page = useAppSelector(selectMoviesPage);
 
   const onPageChange = (pageNumber: number): void => {
-    dispatch(setPage(pageNumber));
+    dispatch(setPageMovies(pageNumber));
   };
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { MovieDetailsType } from './types';
+import { MovieDetailsType } from '../types';
 
 type initialStateType = {
   moviesData: MovieDetailsType[] | [];
@@ -10,7 +10,7 @@ type initialStateType = {
 };
 
 const slices = createSlice({
-  name: 'search',
+  name: 'slicesMovies',
   initialState: {
     moviesData: [],
     page: 1,
@@ -21,17 +21,18 @@ const slices = createSlice({
     setMovies(state: initialStateType, action: PayloadAction<MovieDetailsType[] | []>) {
       state.moviesData = action.payload;
     },
-    setPage(state: initialStateType, action: PayloadAction<number>) {
+    setPageMovies(state: initialStateType, action: PayloadAction<number>) {
       state.page = action.payload;
     },
-    setTotalResults(state: initialStateType, action: PayloadAction<number>) {
+    setTotalResultsMovies(state: initialStateType, action: PayloadAction<number>) {
       state.totalResults = action.payload;
     },
-    setTotalPages(state: initialStateType, action: PayloadAction<number>) {
+    setTotalPagesMovies(state: initialStateType, action: PayloadAction<number>) {
       state.totalPages = action.payload;
     },
   },
 });
 
-export const search = slices.reducer;
-export const { setMovies, setPage, setTotalResults, setTotalPages } = slices.actions;
+export const slicesMovies = slices.reducer;
+export const { setMovies, setPageMovies, setTotalPagesMovies, setTotalResultsMovies } =
+  slices.actions;

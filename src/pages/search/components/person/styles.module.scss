@@ -1,0 +1,15 @@
+.person {
+
+  &__item {
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  &__img {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+}
