@@ -50,49 +50,50 @@ const Header = (): React.ReactElement => {
           <div className={styles.header__wrapper}>
             <img className={styles.header__logo} src={logo} alt="Logo" />
 
-            <ul className={styles.dropdown__list}>
-              <DropdownMenu
-                buttonText="Фільми"
-                items={dropdownItemsMovie}
-                onItemClick={handleItemMovie}
-              />
+            {/* <ul className={styles.dropdown__list}> */}
+            {/* <DropdownMenu */}
+            {/*  buttonText="Фільми" */}
+            {/*  items={dropdownItemsMovie} */}
+            {/*  onItemClick={handleItemMovie} */}
+            {/* /> */}
 
-              <DropdownMenu
-                buttonText="Серіали"
-                items={dropdownItemsSerials}
-                onItemClick={handleItemSerials}
-              />
+            {/* <DropdownMenu */}
+            {/*  buttonText="Серіали" */}
+            {/*  items={dropdownItemsSerials} */}
+            {/*  onItemClick={handleItemSerials} */}
+            {/* /> */}
 
-              <DropdownMenu
-                buttonText="Персони"
-                items={dropdownItemsPerson}
-                onItemClick={handleItemPerson}
-              />
-            </ul>
+            {/* <DropdownMenu */}
+            {/*  buttonText="Персони" */}
+            {/*  items={dropdownItemsPerson} */}
+            {/*  onItemClick={handleItemPerson} */}
+            {/* /> */}
+            {/* </ul> */}
           </div>
           {/* <LanguageSelect /> */}
 
-          {/* <ul> */}
-          {/*  <li> */}
-          {/*    <NavLink to="/">Login</NavLink> */}
-          {/*  </li> */}
-          {/*  <li> */}
-          {/*    <NavLink to="/home">Home</NavLink> */}
-          {/*  </li> */}
-          {/* </ul> */}
+          <ul>
+            {/*  <li> */}
+            {/*    <NavLink to="/">Login</NavLink> */}
+            {/*  </li> */}
+            <li>
+              <NavLink to="/home">Home</NavLink>
+            </li>
+          </ul>
 
           {/* search isVisible */}
-          <div>
-            <button className={styles.button} onClick={handleClick}>
-              open
-            </button>
-            <div className={`${styles.block} ${isVisible ? styles.visible : ''}`}>
-              <div className="container">
-                <input type="text" placeholder="Пошук..." />
-                <button>Пошук</button>
-              </div>
-            </div>
-          </div>
+          {/* <div> */}
+          {/*  <button className={styles.button} onClick={handleClick}> */}
+          {/*    open */}
+          {/*  </button> */}
+
+          {/*  <div className={`${styles.block} ${isVisible ? styles.visible : ''}`}> */}
+          {/*    <div className="container"> */}
+          {/*      <input type="text" placeholder="Пошук..." /> */}
+          {/*      <button>Пошук</button> */}
+          {/*    </div> */}
+          {/*  </div> */}
+          {/* </div> */}
         </div>
       </div>
     </div>

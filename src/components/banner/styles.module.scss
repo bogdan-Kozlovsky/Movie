@@ -1,0 +1,22 @@
+.banner {
+  padding: 15px;
+  min-height: 300px;
+  background-color: #fca506;
+  border-radius: 10px;
+
+  > form {
+    > input {
+      width: 200px;
+      padding: 5px 15px;
+      border: 1px solid #000;
+      border-radius: 10px;
+    }
+
+    > button {
+      margin-left: 15px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      border-radius: 10px;
+    }
+  }
+}

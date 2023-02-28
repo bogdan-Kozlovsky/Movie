@@ -28,9 +28,7 @@ const Home = (): React.ReactElement => {
   return (
     <div>
       <div className="container">
-        <div>
-          <Banner />
-        </div>
+        <Banner />
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <h1 style={{ marginRight: '15px' }}>У тренді</h1>
           <Selector />

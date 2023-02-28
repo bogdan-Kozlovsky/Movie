@@ -9,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 code {
@@ -25,12 +26,17 @@ code {
 
 /*//normalize*/
 ul {
+  padding: 0;
   list-style: none;
 }
 
 button {
+  background-color: #5555e3;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: #ffffff;
   cursor: pointer;
   border: none;
-  background-color: transparent;
-  color: inherit;
+  /*background-color: transparent;*/
+  /*color: inherit;*/
 }

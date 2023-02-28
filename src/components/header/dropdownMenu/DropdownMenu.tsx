@@ -21,10 +21,12 @@ const DropdownMenu = ({
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMouseEnter = (): void => {
+    console.log('yes');
     setIsOpen(true);
   };
 
   const handleMouseLeave = (): void => {
+    console.log('not');
     setIsOpen(false);
   };
 
@@ -35,24 +37,28 @@ const DropdownMenu = ({
 
   return (
     <li className={styles.dropdown}>
-      <button
+      <div
         className={styles.dropdownButton}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         {buttonText}
         <div className={`${styles.dropdownMenu} ${isOpen && styles.show}`}>
-          {items.map(item => (
-            <button
-              key={item.label}
-              className={styles.dropdownItem}
-              onClick={() => handleItemClick(item.value)}
-            >
-              {item.label}
-            </button>
-          ))}
+          {/* <div className={`${styles.dropdownMenu} ${styles.show}`}> */}
+          <ul>
+            {items.map(item => (
+              <li
+                role="presentation"
+                key={item.label}
+                className={styles.dropdownItem}
+                onClick={() => handleItemClick(item.value)}
+              >
+                {item.label}
+              </li>
+            ))}
+          </ul>
         </div>
-      </button>
+      </div>
     </li>
   );
 };
