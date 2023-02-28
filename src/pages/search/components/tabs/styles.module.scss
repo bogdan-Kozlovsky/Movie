@@ -1,0 +1,24 @@
+.tab {
+  display: flex;
+  width: 100%;
+
+  &__button {
+    margin-bottom: 15px;
+  }
+
+  &__active {
+    border: 1px solid #1e90ff;
+    background-color: #ffffff;
+    color: #1e90ff;
+    margin-bottom: 15px;
+  }
+
+  &__list_button {
+    width: 20%;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    width: 70%;
+  }
+}
