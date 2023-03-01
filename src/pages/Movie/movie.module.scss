@@ -1,0 +1,9 @@
+.image {
+  border-bottom: 1px solid var(--primaryColor);
+  //background-position: left calc((50vw - 170px) - 340px) top;
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(
+  'https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/wVxlmhk4OS2eCr0wTQcM4zJ20ml.jpg')
+}

@@ -1,7 +1,13 @@
 // movies
+
+interface Genre {
+  id: number;
+  name: string;
+}
 export interface MovieDetailsType {
   adult: boolean;
   backdrop_path: string;
+  genres: Genre[];
   genre_ids: number[];
   id: number;
   original_language: string;
@@ -14,6 +20,7 @@ export interface MovieDetailsType {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  runtime: number;
 }
 
 export interface RootMoviesType {

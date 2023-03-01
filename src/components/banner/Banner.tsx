@@ -6,7 +6,7 @@ import { useAppSelector } from '../../hooks/useAppSelector';
 import { useAppDispatch } from '../../hooks/useDispatch';
 import { searchMovies } from '../../store/features/search/asyncThunk/searchMovies';
 import { selectMoviesPage } from '../../store/features/search/selectors';
-import { PATH } from '../../utils/enum/paths';
+import { PATHS } from '../../utils/enum';
 
 import styles from './styles.module.scss';
 
@@ -21,7 +21,7 @@ const Banner = (): React.ReactElement => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
 
-    navigate(`${PATH.SEARCH}?query=${value}`);
+    navigate(`${PATHS.SEARCH}?query=${value}`);
     dispatch(searchMovies({ query: value, page }));
   };
 
