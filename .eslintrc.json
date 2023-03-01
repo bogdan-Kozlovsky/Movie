@@ -91,6 +91,12 @@
                 "self"
             ]
         }],
+        "prettier/prettier": [
+            "warn",
+            {
+                "endOfLine": "auto"
+            }
+        ],
         "react/display-name": "off",
         "react/react-in-jsx-scope": "off",
         "react/require-default-props": "off",
