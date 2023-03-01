@@ -29,3 +29,11 @@ export {
   setTotalResultsCollection,
   slicesCollection,
 } from './slicesCollection';
+
+export {
+  slicesCompanies,
+  setCompanies,
+  setPageCompanies,
+  setTotalPagesCompanies,
+  setTotalResultsCompanies,
+} from './slicesCompanies';

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { Collection } from '../collection/Collection';
+import { Companies } from '../companies/Companies';
 import { Movies } from '../movies/Movies';
 import { Person } from '../person/Person';
 import { TV } from '../tv/TV';
@@ -40,7 +41,7 @@ const tabs = [
   },
   {
     label: 'Companies',
-    content: <div>Content for Tab 3</div>,
+    content: <Companies />,
   },
   {
     label: 'Keywords',

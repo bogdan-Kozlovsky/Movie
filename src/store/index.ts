@@ -34,3 +34,4 @@ export { searchMovies } from './features/search/asyncThunk/searchMovies';
 export { searchPerson } from './features/search/asyncThunk/searchPerson';
 export { searchTv } from './features/search/asyncThunk/searchTv';
 export { searchCollection } from './features/search/asyncThunk/searchCollection';
+export { searchCompanies } from './features/search/asyncThunk/searchCompanies';

@@ -106,3 +106,17 @@ export interface RootCollectionType {
   total_pages: number;
   total_results: number;
 }
+
+export interface CompaniesDetailsType {
+  id: number;
+  logo_path: string;
+  name: string;
+  origin_country: string;
+}
+
+export interface RootCompaniesType {
+  page: number;
+  results: CompaniesDetailsType[];
+  total_pages: number;
+  total_results: number;
+}

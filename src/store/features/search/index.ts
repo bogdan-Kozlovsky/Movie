@@ -30,7 +30,16 @@ export {
   slicesCollection,
 } from './slices/slicesCollection';
 
+export {
+  slicesCompanies,
+  setCompanies,
+  setPageCompanies,
+  setTotalPagesCompanies,
+  setTotalResultsCompanies,
+} from './slices/slicesCompanies';
+
 export { searchMovies } from './asyncThunk/searchMovies';
 export { searchPerson } from './asyncThunk/searchPerson';
 export { searchTv } from './asyncThunk/searchTv';
 export { searchCollection } from './asyncThunk/searchCollection';
+export { searchCompanies } from './asyncThunk/searchCompanies';

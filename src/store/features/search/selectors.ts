@@ -49,3 +49,13 @@ export const selectCollectionPage = (state: AppRootStateType): number =>
   state.slicesCollection.page;
 export const selectCollectionTotalPage = (state: AppRootStateType): number =>
   state.slicesCollection.totalPages;
+
+// companies
+export const selectCompanies = (state: AppRootStateType): CollectionDetailsType[] | [] =>
+  state.slicesCompanies.companiesData;
+export const selectCompaniesTotalResult = (state: AppRootStateType): number =>
+  state.slicesCompanies.totalResults;
+export const selectCompaniesPage = (state: AppRootStateType): number =>
+  state.slicesCompanies.page;
+export const selectCompaniesTotalPage = (state: AppRootStateType): number =>
+  state.slicesCompanies.totalPages;
