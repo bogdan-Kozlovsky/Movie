@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { Movies } from '../movies/Movies';
 import { Person } from '../person/Person';
+import { TV } from '../tv/TV';
 
 import styles from './styles.module.scss';
 import { TabPropsType, TabsType } from './types';
@@ -30,7 +31,7 @@ const tabs = [
   },
   {
     label: 'TV Show',
-    content: <div>Content for Tab 3</div>,
+    content: <TV />,
   },
   {
     label: 'Collections',

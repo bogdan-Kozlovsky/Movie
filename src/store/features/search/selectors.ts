@@ -1,6 +1,6 @@
 import { AppRootStateType } from '../../types';
 
-import { MovieDetailsType, PersonDetailsType } from './types';
+import { MovieDetailsType, PersonDetailsType, TvDetailsType } from './types';
 
 // movies
 export const selectMovies = (state: AppRootStateType): MovieDetailsType[] | [] =>
@@ -25,3 +25,12 @@ export const selectPersonPage = (state: AppRootStateType): number =>
   state.slicesPerson.page;
 export const selectPersonTotalPage = (state: AppRootStateType): number =>
   state.slicesPerson.totalPages;
+
+// tv
+export const selectTv = (state: AppRootStateType): TvDetailsType[] | [] =>
+  state.slicesTv.TvData;
+export const selectTvTotalResult = (state: AppRootStateType): number =>
+  state.slicesTv.totalResults;
+export const selectTvPage = (state: AppRootStateType): number => state.slicesTv.page;
+export const selectTvTotalPage = (state: AppRootStateType): number =>
+  state.slicesTv.totalPages;

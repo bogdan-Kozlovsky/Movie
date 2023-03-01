@@ -14,5 +14,14 @@ export {
   setMovies,
 } from './search/slices/slicesMovies';
 
+export {
+  setTv,
+  slicesTv,
+  setPageTv,
+  setTotalPagesTv,
+  setTotalResultsTv,
+} from './search/slices/slicesTv';
+
 export { searchMovies } from './search/asyncThunk/searchMovies';
 export { searchPerson } from './search/asyncThunk/searchPerson';
+export { searchTv } from './search/asyncThunk/searchTv';

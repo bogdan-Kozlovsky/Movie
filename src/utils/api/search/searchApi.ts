@@ -16,7 +16,7 @@ export const searchApi = {
   person(query: string | null, page: number) {
     return instance.get(`search/person?query=${query}&page=${page}`);
   },
-  tv(query: string) {
-    return instance.get(`search/tv?query=${query}`);
+  tv(query: string | null, page: number) {
+    return instance.get(`search/tv?query=${query}&page=${page}`);
   },
 };

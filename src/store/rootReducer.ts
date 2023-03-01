@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import { slicesPerson } from './features';
+import { slicesPerson, slicesTv } from './features';
 import { global } from './features/global/slices';
 import { language } from './features/language/slices';
 import { slicesMovies } from './features/search/slices/slicesMovies';
@@ -12,4 +12,5 @@ export const rootReducer = combineReducers({
   global,
   slicesMovies,
   slicesPerson,
+  slicesTv,
 });

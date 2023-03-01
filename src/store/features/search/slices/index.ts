@@ -13,3 +13,11 @@ export {
   setTotalResultsMovies,
   setMovies,
 } from './slicesMovies';
+
+export {
+  setTv,
+  slicesTv,
+  setPageTv,
+  setTotalPagesTv,
+  setTotalResultsTv,
+} from './slicesTv';
