@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { Collection } from '../collection/Collection';
 import { Movies } from '../movies/Movies';
 import { Person } from '../person/Person';
 import { TV } from '../tv/TV';
@@ -35,7 +36,7 @@ const tabs = [
   },
   {
     label: 'Collections',
-    content: <div>Content for Tab 3</div>,
+    content: <Collection />,
   },
   {
     label: 'Companies',

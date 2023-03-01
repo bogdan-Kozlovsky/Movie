@@ -22,6 +22,15 @@ export {
   setTotalResultsTv,
 } from './search/slices/slicesTv';
 
+export {
+  setCollection,
+  setPageCollection,
+  setTotalPagesCollection,
+  setTotalResultsCollection,
+  slicesCollection,
+} from './search/slices/slicesCollection';
+
 export { searchMovies } from './search/asyncThunk/searchMovies';
 export { searchPerson } from './search/asyncThunk/searchPerson';
 export { searchTv } from './search/asyncThunk/searchTv';
+export { searchCollection } from './search/asyncThunk/searchCollection';

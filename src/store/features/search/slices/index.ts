@@ -21,3 +21,11 @@ export {
   setTotalPagesTv,
   setTotalResultsTv,
 } from './slicesTv';
+
+export {
+  setCollection,
+  setPageCollection,
+  setTotalPagesCollection,
+  setTotalResultsCollection,
+  slicesCollection,
+} from './slicesCollection';

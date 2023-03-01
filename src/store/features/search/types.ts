@@ -88,3 +88,21 @@ export interface RootTvType {
   total_pages: number;
   total_results: number;
 }
+
+export interface CollectionDetailsType {
+  adult: boolean;
+  backdrop_path: string;
+  id: number;
+  name: string;
+  original_language: string;
+  original_name: string;
+  overview: string;
+  poster_path: string;
+}
+
+export interface RootCollectionType {
+  page: number;
+  results: CollectionDetailsType[];
+  total_pages: number;
+  total_results: number;
+}
