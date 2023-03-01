@@ -1,32 +1,4 @@
 .search {
+  padding-bottom: 20px;
   display: flex;
-
-  > aside {
-    flex-shrink: 0;
-    width: 20%;
-    margin-right: 10px;
-  }
-
-  &__list {
-    width: 60%;
-    padding: 5px;
-  }
-
-  &__item {
-    padding: 10px;
-    display: flex;
-    border: 1px solid rgba(227, 227, 227, 1);
-    border-radius: 10px;
-    margin-bottom: 15px;
-
-    > img {
-      object-fit: cover;
-      height: 100px;
-      width: 100px;
-    }
-  }
-
-  &__content {
-    margin-left: 15px;
-  }
 }

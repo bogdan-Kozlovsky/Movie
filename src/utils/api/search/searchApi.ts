@@ -1,22 +1,31 @@
+import {
+  RootCollectionType,
+  RootCompaniesType,
+  RootMoviesType,
+  RootPersonType,
+  RootTvType,
+} from '../../../store/features/search/types';
 import { instance } from '../config';
 
 export const searchApi = {
   movies(query: string | null, page: number) {
-    return instance.get(`search/movie?query=${query}&page=${page}`);
+    return instance.get<RootMoviesType>(`search/movie?query=${query}&page=${page}`);
   },
-  collection(query: string) {
-    return instance.get(`search/collection?query=${query}`);
+  collection(query: string | null, page: number) {
+    return instance.get<RootCollectionType>(
+      `search/collection?query=${query}&page=${page}`,
+    );
   },
-  keyword(query: string) {
-    return instance.get(`search/keyword?query=${query}`);
+  keyword(query: string | null, page: number) {
+    return instance.get(`search/keyword?query=${query}&page=${page}`);
   },
-  company(query: string) {
-    return instance.get(`search/company?query=${query}`);
+  company(query: string | null, page: number) {
+    return instance.get<RootCompaniesType>(`search/company?query=${query}&page=${page}`);
   },
-  person(query: string) {
-    return instance.get(`search/person?query=${query}`);
+  person(query: string | null, page: number) {
+    return instance.get<RootPersonType>(`search/person?query=${query}&page=${page}`);
   },
-  tv(query: string) {
-    return instance.get(`search/tv?query=${query}`);
+  tv(query: string | null, page: number) {
+    return instance.get<RootTvType>(`search/tv?query=${query}&page=${page}`);
   },
 };
