@@ -6,6 +6,7 @@ import {
   slicesPerson,
   slicesTv,
   slicesCompanies,
+  slicesKeywords,
 } from './features';
 import { global } from './features/global/slices';
 import { language } from './features/language/slices';
@@ -20,4 +21,5 @@ export const rootReducer = combineReducers({
   slicesTv,
   slicesCollection,
   slicesCompanies,
+  slicesKeywords,
 });

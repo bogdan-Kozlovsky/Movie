@@ -30,8 +30,17 @@ export {
   slicesCollection,
 } from './features/search/slices/slicesCollection';
 
+export {
+  slicesKeywords,
+  setKeywords,
+  setPageKeywords,
+  setTotalPagesKeywords,
+  setTotalResultsKeywords,
+} from './features/search/slices/slicesKeywords';
+
 export { searchMovies } from './features/search/asyncThunk/searchMovies';
 export { searchPerson } from './features/search/asyncThunk/searchPerson';
 export { searchTv } from './features/search/asyncThunk/searchTv';
 export { searchCollection } from './features/search/asyncThunk/searchCollection';
 export { searchCompanies } from './features/search/asyncThunk/searchCompanies';
+export { searchKeywords } from './features/search/asyncThunk/searchKeywords';

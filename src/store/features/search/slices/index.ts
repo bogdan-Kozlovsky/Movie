@@ -37,3 +37,11 @@ export {
   setTotalPagesCompanies,
   setTotalResultsCompanies,
 } from './slicesCompanies';
+
+export {
+  slicesKeywords,
+  setKeywords,
+  setPageKeywords,
+  setTotalPagesKeywords,
+  setTotalResultsKeywords,
+} from './slicesKeywords';

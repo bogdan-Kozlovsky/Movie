@@ -2,6 +2,7 @@ import { AppRootStateType } from '../../types';
 
 import {
   CollectionDetailsType,
+  KeywordsDetailsType,
   MovieDetailsType,
   PersonDetailsType,
   TvDetailsType,
@@ -59,3 +60,13 @@ export const selectCompaniesPage = (state: AppRootStateType): number =>
   state.slicesCompanies.page;
 export const selectCompaniesTotalPage = (state: AppRootStateType): number =>
   state.slicesCompanies.totalPages;
+
+// keywords
+export const selectKeywords = (state: AppRootStateType): KeywordsDetailsType[] | [] =>
+  state.slicesKeywords.keywordsData;
+export const selectKeywordsTotalResult = (state: AppRootStateType): number =>
+  state.slicesKeywords.totalResults;
+export const selectKeywordsPage = (state: AppRootStateType): number =>
+  state.slicesKeywords.page;
+export const selectKeywordsTotalPage = (state: AppRootStateType): number =>
+  state.slicesKeywords.totalPages;

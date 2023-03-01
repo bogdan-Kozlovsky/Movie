@@ -16,8 +16,8 @@ export const searchApi = {
       `search/collection?query=${query}&page=${page}`,
     );
   },
-  keyword(query: string) {
-    return instance.get(`search/keyword?query=${query}`);
+  keyword(query: string | null, page: number) {
+    return instance.get(`search/keyword?query=${query}&page=${page}`);
   },
   company(query: string | null, page: number) {
     return instance.get<RootCompaniesType>(`search/company?query=${query}&page=${page}`);

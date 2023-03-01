@@ -38,8 +38,17 @@ export {
   setTotalResultsCompanies,
 } from './search/slices/slicesCompanies';
 
+export {
+  slicesKeywords,
+  setKeywords,
+  setPageKeywords,
+  setTotalPagesKeywords,
+  setTotalResultsKeywords,
+} from './search/slices/slicesKeywords';
+
 export { searchMovies } from './search/asyncThunk/searchMovies';
 export { searchPerson } from './search/asyncThunk/searchPerson';
 export { searchTv } from './search/asyncThunk/searchTv';
 export { searchCollection } from './search/asyncThunk/searchCollection';
 export { searchCompanies } from './search/asyncThunk/searchCompanies';
+export { searchKeywords } from './search/asyncThunk/searchKeywords';

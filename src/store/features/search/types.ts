@@ -120,3 +120,15 @@ export interface RootCompaniesType {
   total_pages: number;
   total_results: number;
 }
+
+export interface KeywordsDetailsType {
+  id: number;
+  name: string;
+}
+
+export interface RootOKeywordsType {
+  page: number;
+  results: KeywordsDetailsType[];
+  total_pages: number;
+  total_results: number;
+}
