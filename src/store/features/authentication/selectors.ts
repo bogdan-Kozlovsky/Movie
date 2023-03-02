@@ -1,4 +1,4 @@
 import { AppRootStateType } from '../../types';
 
-// export const selectLanguageValue = (state: AppRootStateType): string =>
-//   state.language.selectedLanguageValue;
+export const selectSetIsLoginUser = (state: AppRootStateType): boolean =>
+  state.slicesAuthentication.isLoginUser;

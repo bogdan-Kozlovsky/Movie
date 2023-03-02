@@ -11,7 +11,7 @@ import { PATHS } from '../utils/enum';
 const RoutesNavigation = memo(() => (
   <div className="container">
     <Routes>
-      {/* <Route path={PATH.LOGIN} element={<Login />} /> */}
+      <Route path={PATHS.LOGIN} element={<Login />} />
       <Route path={PATHS.HOME} element={<Home />} />
       <Route path={`${PATHS.MOVIE}/:id`} element={<Movie />} />
       <Route path={`${PATHS.SEARCH}`} element={<Search />} />

@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
 
+import { useNavigate } from 'react-router-dom';
+
+import { useAppSelector } from '../../hooks/useAppSelector';
 import { useAppDispatch } from '../../hooks/useDispatch';
-import { setLoginUser } from '../../store/features/authentication/asyncThunk/setLoginUser';
+import { setLoginUser } from '../../store/features';
+import { selectSetIsLoginUser } from '../../store/features/authentication/selectors';
+import { PATHS } from '../../utils/enum';
 
 import styles from './styles.module.scss';
 
 const Login = (): React.ReactElement => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('Bogdan_Frontend');
+  const [password, setPassword] = useState('Bogdan04Bogdan');
 
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const isLoginUser = useAppSelector(selectSetIsLoginUser);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
@@ -19,6 +27,10 @@ const Login = (): React.ReactElement => {
 
     dispatch(setLoginUser(data));
   };
+
+  if (isLoginUser) {
+    navigate(PATHS.HOME);
+  }
 
   return (
     <div className={styles.container}>

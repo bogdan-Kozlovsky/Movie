@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import Banner from '../../components/banner/Banner';
 import Selector from '../../components/selector/Selector';
@@ -9,15 +9,12 @@ import { useAppSelector } from '../../hooks/useAppSelector';
 import { useAppDispatch } from '../../hooks/useDispatch';
 import { selectLanguageValue } from '../../store/features/language/selectors';
 import { movieDetails } from '../../store/features/movie/asyncThunk/movieDetails';
-import { setMovieDetails } from '../../store/features/movie/slices';
-import { searchMovies } from '../../store/features/search/asyncThunk/searchMovies';
 import { getTrending } from '../../store/features/trending/asyncThunk/getTrending';
 import {
   selectMediaType,
   selectTimeWindow,
   selectTrending,
 } from '../../store/features/trending/selectors';
-import { movieApi } from '../../utils/api/movie/movieApi';
 import { PATHS } from '../../utils/enum';
 
 const Home = (): React.ReactElement => {
@@ -58,6 +55,10 @@ const Home = (): React.ReactElement => {
   // const getMovieDetails = (movieId: number): any => {
   //   return getMovieData(movieId);
   // };
+
+  // useEffect(() => {
+  //   dispatch(getAccount());
+  // }, []);
 
   useEffect(() => {
     dispatch(getTrending({ mediaType, timeWindow, languageValue: selectedLanguage }));
