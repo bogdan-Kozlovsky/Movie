@@ -73,9 +73,9 @@ const Header = (): React.ReactElement => {
           {/* <LanguageSelect /> */}
 
           <ul>
-            {/*  <li> */}
-            {/*    <NavLink to="/">Login</NavLink> */}
-            {/*  </li> */}
+            <li>
+              <NavLink to="/">Login</NavLink>
+            </li>
             <li>
               <NavLink to="/home">Home</NavLink>
             </li>

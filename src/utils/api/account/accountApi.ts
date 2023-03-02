@@ -1,7 +1,7 @@
 import { instance } from '../config';
 
 export const accountApi = {
-  details() {
-    return instance.get(`account`);
+  getAccountDetails(sessionId: string) {
+    return instance.get(`account?session_id=${sessionId}`);
   },
 };

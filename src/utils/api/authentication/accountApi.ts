@@ -2,10 +2,13 @@ import { RequestBodyType } from '../../../store/features/authentication/asyncThu
 import { instance } from '../config';
 
 export const authenticationApi = {
-  token() {
+  fetchToken() {
     return instance.get(`authentication/token/new`);
   },
-  setUser(body: RequestBodyType) {
+  loginUser(body: RequestBodyType) {
     return instance.post(`authentication/token/validate_with_login`, body);
+  },
+  createSession(token: string) {
+    return instance.post(`/authentication/session/new`, { request_token: token });
   },
 };

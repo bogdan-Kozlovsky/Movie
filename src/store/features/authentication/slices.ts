@@ -1,15 +1,19 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type initialStateType = {};
+type initialStateType = {
+  isLoginUser: boolean;
+};
 const slices = createSlice({
-  name: 'account',
-  initialState: {},
+  name: 'authentication',
+  initialState: {
+    isLoginUser: false,
+  },
   reducers: {
-    // setDetailsAccount(state: initialStateType, action: PayloadAction<any>) {
-    //   state.selectedLanguageValue = action.payload;
-    // },
+    setIsLoginUser(state: initialStateType, action: PayloadAction<boolean>) {
+      state.isLoginUser = action.payload;
+    },
   },
 });
 
-export const account = slices.reducer;
-export const {} = slices.actions;
+export const slicesAuthentication = slices.reducer;
+export const { setIsLoginUser } = slices.actions;

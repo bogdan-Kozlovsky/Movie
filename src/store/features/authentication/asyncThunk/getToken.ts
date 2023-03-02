@@ -2,10 +2,10 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosResponse } from 'axios';
 
 import { authenticationApi } from '../../../../utils/api/authentication/accountApi';
-import { GetTokenResponseType } from '../types';
+import { AuthenticationTokenNewResponse } from '../types';
 
 export const getToken = createAsyncThunk('getToken', async (_, { dispatch }) => {
-  const response: AxiosResponse<GetTokenResponseType> = await authenticationApi.token();
+  const response: AxiosResponse<AuthenticationTokenNewResponse> = await authenticationApi.fetchToken();
 
   localStorage.setItem('requestToken', response.data.request_token);
 });

@@ -1,12 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { AxiosResponse } from 'axios';
 
 import { accountApi } from '../../../../utils/api/account/accountApi';
+import { AccountDetails } from '../../authentication/types';
 
-export const getAccount = createAsyncThunk('getAccount', async (_, { dispatch }) => {
-  const response = await accountApi.details();
-
-  // eslint-disable-next-line no-debugger
-  debugger;
-  console.log(response.data);
-  // dispatch(setLanguages(response.data));
-});
+export const getAccount = createAsyncThunk(
+  'getAccount',
+  async (sessionId: string, { dispatch }) => {
+    const response: AxiosResponse<AccountDetails> = await accountApi.getAccountDetails(
+      sessionId,
+    );
+  },
+);
