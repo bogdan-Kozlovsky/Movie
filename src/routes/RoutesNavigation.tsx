@@ -2,11 +2,8 @@ import React, { memo } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 
-import { Home } from '../pages/home/Home';
-import { Login } from '../pages/login/Login';
-import { Movie } from '../pages/Movie/Movie';
-import { Search } from '../pages/search/Search';
-import { PATHS } from '../utils/enum';
+import { PATHS } from '../enums';
+import { Login, Home, Movie, Search } from '../views/pages';
 
 const RoutesNavigation = memo(() => (
   <div className="container">

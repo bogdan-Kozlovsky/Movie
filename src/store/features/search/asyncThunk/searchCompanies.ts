@@ -1,13 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosResponse } from 'axios';
 
-import { searchApi } from '../../../../utils/api/search/searchApi';
+import { searchApi } from '../../../../api';
 import {
   setCompanies,
   setTotalPagesCompanies,
   setTotalResultsCompanies,
 } from '../slices';
-import { RootCollectionType, RootCompaniesType } from '../types';
+import { RootCompaniesType } from '../types';
 
 type paramsType = {
   query: string | null;

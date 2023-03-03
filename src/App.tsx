@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 
-import Layout from './components/layout/Layout';
-import { useAppSelector } from './hooks/useAppSelector';
-import { useAppDispatch } from './hooks/useDispatch';
+import { useAppSelector, useAppDispatch } from './hooks';
 import { RoutesNavigation } from './routes/RoutesNavigation';
 import { getToken } from './store/features';
 import { selectAppInitialized } from './store/features/global/selectors';
+import { Container } from './views/components';
 
 const App = (): React.ReactElement => {
   const initialized = useAppSelector(selectAppInitialized);
@@ -17,13 +16,13 @@ const App = (): React.ReactElement => {
   }, []);
 
   // if (!initialized) {
-  //   return <initializingLoader />;
+  //   return <InitializingLoader />;
   // }
 
   return (
-    <Layout>
+    <Container>
       <RoutesNavigation />
-    </Layout>
+    </Container>
   );
 };
 
