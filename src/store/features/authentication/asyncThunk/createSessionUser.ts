@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosResponse } from 'axios';
 
-import { authenticationApi } from '../../../../utils/api/authentication/accountApi';
+import { authenticationApi } from '../../../../api';
 import { getAccount } from '../../account/asyncThunk/getAccount';
 import { AuthenticationSessionNewResponse } from '../types';
 

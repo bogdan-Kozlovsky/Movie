@@ -1,0 +1,1 @@
+export { trendingApi } from './trendingApi';

@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosResponse } from 'axios';
 
-import { searchApi } from '../../../../utils/api/search/searchApi';
+import { searchApi } from '../../../../api';
 import { setMovies, setTotalPagesMovies, setTotalResultsMovies } from '../slices';
 import { RootMoviesType } from '../types';
 

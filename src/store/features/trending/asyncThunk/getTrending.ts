@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosResponse } from 'axios';
 
-import { trendingApi } from '../../../../utils/api/trending/trendingApi';
+import { trendingApi } from '../../../../api';
 import { setTrending } from '../slices';
 import { RootTrending } from '../types';
 

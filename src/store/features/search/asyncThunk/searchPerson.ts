@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosResponse } from 'axios';
 
-import { searchApi } from '../../../../utils/api/search/searchApi';
+import { searchApi } from '../../../../api';
 import { setPerson, setTotalPagesPerson, setTotalResultsPerson } from '../slices';
 import { RootPersonType } from '../types';
 
