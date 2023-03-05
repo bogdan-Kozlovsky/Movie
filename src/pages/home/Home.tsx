@@ -2,20 +2,16 @@ import React, { useEffect, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
-import Banner from '../../components/banner/Banner';
-import Selector from '../../components/selector/Selector';
-import TrendingButton from '../../components/TrendingButton';
-import { useAppSelector } from '../../hooks/useAppSelector';
-import { useAppDispatch } from '../../hooks/useDispatch';
+import { PATHS } from '../../enums';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { getTrending, movieDetails } from '../../store';
 import { selectLanguageValue } from '../../store/features/language/selectors';
-import { movieDetails } from '../../store/features/movie/asyncThunk/movieDetails';
-import { getTrending } from '../../store/features/trending/asyncThunk/getTrending';
 import {
   selectMediaType,
   selectTimeWindow,
   selectTrending,
 } from '../../store/features/trending/selectors';
-import { PATHS } from '../../utils/enum';
+import { Banner, Selector, TrendingButton } from '../../views/components';
 
 const Home = (): React.ReactElement => {
   const dispatch = useAppDispatch();
@@ -24,6 +20,7 @@ const Home = (): React.ReactElement => {
   const mediaType = useAppSelector(selectMediaType);
   const timeWindow = useAppSelector(selectTimeWindow);
   const selectedLanguage = useAppSelector(selectLanguageValue);
+
   const [movie, setMovie] = useState(null);
 
   const getMovieDetails = (movieId: number): void => {
