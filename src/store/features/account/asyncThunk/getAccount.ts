@@ -3,6 +3,7 @@ import { AxiosResponse } from 'axios';
 
 import { accountApi } from '../../../../utils/api/account/accountApi';
 import { AccountDetails } from '../../authentication/types';
+import { setUserAccountData } from '../slices';
 
 export const getAccount = createAsyncThunk(
   'getAccount',
@@ -10,5 +11,7 @@ export const getAccount = createAsyncThunk(
     const response: AxiosResponse<AccountDetails> = await accountApi.getAccountDetails(
       sessionId,
     );
+
+    dispatch(setUserAccountData(response.data));
   },
 );

@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import logo from '../../assets/icon/logo.svg';
+import { useAppSelector } from '../../hooks/useAppSelector';
+import { selectUserAccountData } from '../../store/features/account/selectors';
+import { AccountDetails, AvatarInfo } from '../../store/features/authentication/types';
 import LanguageSelect from '../languageSelect/LanguageSelect';
 
 import DropdownMenu from './dropdownMenu/DropdownMenu';
@@ -10,6 +13,10 @@ import styles from './styles.module.scss';
 
 const Header = (): React.ReactElement => {
   const [isVisible, setIsVisible] = useState(false);
+
+  // @ts-ignore
+  const { avatar, name, username } = useAppSelector(selectUserAccountData);
+  // const avatar = useAppSelector(selectUserAccountData);
 
   const dropdownItemsMovie = [
     { label: 'Популярні', value: '#' },
@@ -94,6 +101,19 @@ const Header = (): React.ReactElement => {
           {/*    </div> */}
           {/*  </div> */}
           {/* </div> */}
+
+          <div>
+            {/* <img */}
+            {/*  src={ */}
+            {/*    avatar */}
+            {/*      ? `https://image.tmdb.org/t/p/w92/${avatar.gravatar.hash}` */}
+            {/*      : name[0].toUpperCase() */}
+            {/*  } */}
+            {/*  alt="avatar" */}
+            {/* /> */}
+            <span>{name}</span>
+            <span>{username}</span>
+          </div>
         </div>
       </div>
     </div>

@@ -1,15 +1,25 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type initialStateType = {};
+import { AccountDetails } from '../authentication/types';
+
+type initialStateType = {
+  userAccountData: AccountDetails | {};
+};
+
 const slices = createSlice({
-  name: 'account',
-  initialState: {},
+  name: 'slicesAccount',
+  initialState: {
+    userAccountData: {},
+  },
   reducers: {
-    // setDetailsAccount(state: initialStateType, action: PayloadAction<any>) {
-    //   state.selectedLanguageValue = action.payload;
-    // },
+    setUserAccountData(
+      state: initialStateType,
+      action: PayloadAction<AccountDetails | {}>,
+    ) {
+      state.userAccountData = action.payload;
+    },
   },
 });
 
-export const account = slices.reducer;
-export const {} = slices.actions;
+export const slicesAccount = slices.reducer;
+export const { setUserAccountData } = slices.actions;

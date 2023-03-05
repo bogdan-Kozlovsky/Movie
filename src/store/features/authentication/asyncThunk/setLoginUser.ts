@@ -16,9 +16,8 @@ export type RequestBodyType = {
 export const setLoginUser = createAsyncThunk(
   'setLoginUser',
   async (body: RequestBodyType, { dispatch }) => {
-    const response: AxiosResponse<AuthenticationTokenNewResponse> = await authenticationApi.loginUser(
-      body,
-    );
+    const response: AxiosResponse<AuthenticationTokenNewResponse> =
+      await authenticationApi.loginUser(body);
 
     if (response.data.success) {
       dispatch(setIsLoginUser(true));

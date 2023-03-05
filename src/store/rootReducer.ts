@@ -8,6 +8,7 @@ import {
   slicesCompanies,
   slicesKeywords,
 } from './features';
+import { slicesAccount } from './features/account/slices';
 import { slicesAuthentication } from './features/authentication/slices';
 import { global } from './features/global/slices';
 import { language } from './features/language/slices';
@@ -20,6 +21,7 @@ export const rootReducer = combineReducers({
   language,
   global,
   movie,
+  slicesAccount,
   slicesMovies,
   slicesPerson,
   slicesTv,

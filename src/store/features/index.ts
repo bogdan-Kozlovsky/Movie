@@ -1,3 +1,5 @@
+
+// search
 export {
   slicesPerson,
   setTotalResultsPerson,
@@ -46,6 +48,7 @@ export {
   setTotalResultsKeywords,
 } from './search/slices/slicesKeywords';
 
+// search asyncThunk
 export { searchMovies } from './search/asyncThunk/searchMovies';
 export { searchPerson } from './search/asyncThunk/searchPerson';
 export { searchTv } from './search/asyncThunk/searchTv';
@@ -53,6 +56,10 @@ export { searchCollection } from './search/asyncThunk/searchCollection';
 export { searchCompanies } from './search/asyncThunk/searchCompanies';
 export { searchKeywords } from './search/asyncThunk/searchKeywords';
 
+// authentication
 export { createSessionUser } from './authentication/asyncThunk/createSessionUser';
 export { setLoginUser } from './authentication/asyncThunk/setLoginUser';
 export { getToken } from './authentication/asyncThunk/getToken';
+
+// authentication asyncThunk
+export { getAccount } from './account/asyncThunk/getAccount';

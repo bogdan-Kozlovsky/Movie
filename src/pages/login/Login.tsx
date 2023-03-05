@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { useAppDispatch } from '../../hooks/useDispatch';
-import { setLoginUser } from '../../store/features';
+import { getToken, setLoginUser } from '../../store/features';
 import { selectSetIsLoginUser } from '../../store/features/authentication/selectors';
 import { PATHS } from '../../utils/enum';
 
@@ -27,6 +27,10 @@ const Login = (): React.ReactElement => {
 
     dispatch(setLoginUser(data));
   };
+
+  useEffect(() => {
+    dispatch(getToken());
+  }, []);
 
   if (isLoginUser) {
     navigate(PATHS.HOME);
