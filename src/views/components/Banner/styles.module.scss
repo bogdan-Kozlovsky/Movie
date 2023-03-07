@@ -1,8 +1,12 @@
 .banner {
   padding: 15px;
   min-height: 300px;
-  background-color: #fca506;
+  background-color: var(--color-dark-lighter);
   border-radius: 10px;
+
+  > title {
+    color: var(--color-white)
+  }
 
   > form {
     > input {
@@ -15,8 +19,9 @@
     > button {
       margin-left: 15px;
       padding: 10px 15px;
-      background-color: #007bff;
+      background-color: var(--color-yellow);
       border-radius: 10px;
+      color: var(--color-dark-lighter)
     }
   }
 }

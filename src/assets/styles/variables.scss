@@ -1,5 +1,18 @@
 :root {
-  --color-background: #02050e;
-  --color-white: #fff;
-  --color-dark: #000;
+  /*colors*/
+  --color-white: #ffffff;
+  --color-gray: #cacbd2;
+  --color-yellow: #ffc576;
+  --color-dark-lighter: #313552;
+  --color-dark-light: #2a2c47;
+  --color-dark: #1f2336;
+  --color-dark-daker: #08080d;
+
+  /*text*/
+  --fs-small: 0.8125rem;
+  --fs-regular: 0.9375rem;
+  --fs-h4: var(--fs-regular);
+  --fs-h3: 1.25rem;
+  --fs-h2: 2rem;
+  --fs-h1: 3rem;
 }

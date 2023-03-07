@@ -35,7 +35,7 @@ const Home = (): React.ReactElement => {
       <div className="container">
         <Banner />
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <h1 style={{ marginRight: '15px' }}>У тренді</h1>
+          <h2 style={{ marginRight: '15px' }}>У тренді</h2>
           <Selector />
           <TrendingButton />
         </div>
@@ -49,7 +49,7 @@ const Home = (): React.ReactElement => {
                 alt={movie.title}
               />
               <button onClick={() => getMovieDetails(movie.id)}>Movie</button>
-              <h2>{movie.title || movie.name}</h2>
+              <h3>{movie.title || movie.name}</h3>
               {/* </NavLink> */}
             </li>
           ))}
