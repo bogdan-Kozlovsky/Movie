@@ -51,8 +51,10 @@ const Banner = (): React.ReactElement => {
 
   return (
     <section className={styles.banner}>
-      <h1>Welcome.</h1>
-      <h2>Millions of movies, series and people. Explore now.</h2>
+      <div className={styles.title}>
+        <h1>Welcome.</h1>
+        <h2>Millions of movies, series and people. Explore now.</h2>
+      </div>
       <form onSubmit={handleSubmit}>
         <input
           value={value}
