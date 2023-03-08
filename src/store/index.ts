@@ -38,7 +38,7 @@ export {
   setTotalResultsKeywords,
 } from './features/search/slices/slicesKeywords';
 
-export { selectSetIsLoginUser, setLoginUser } from './features/authentication';
+export { selectSetIsLoginUser } from './features/authentication';
 
 export { movie, setMovieDetails } from './features/movie/slices';
 
@@ -55,3 +55,5 @@ export { searchKeywords } from './features/search/asyncThunk/searchKeywords';
 export { movieDetails } from './features/movie/asyncThunk/movieDetails';
 export { getTrending } from './features/trending/asyncThunk/getTrending';
 export { getLanguage } from './features/language/asyncThunk/getLanguage';
+
+export { createSessionUser, getToken, logoutAccount } from './features/authentication';

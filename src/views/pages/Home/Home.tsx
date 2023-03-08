@@ -4,7 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 import { PATHS } from '../../../enums';
 import { useAppDispatch, useAppSelector } from '../../../hooks';
-import { movieDetails, getTrending } from '../../../store';
+import { getTrending, movieDetails } from '../../../store';
+import { createSessionUser } from '../../../store/features';
+import { getAccount } from '../../../store/features/account/asyncThunk/getAccount';
 import { selectLanguageValue } from '../../../store/features/language/selectors';
 import {
   selectMediaType,
@@ -27,6 +29,17 @@ const Home = (): React.ReactElement => {
   };
 
   useEffect(() => {
+    const token = localStorage.getItem('token');
+    const sessionId = localStorage.getItem('session_id');
+
+    if (sessionId) {
+      dispatch(getAccount(sessionId));
+    } else if (token) {
+      dispatch(createSessionUser(token));
+    }
+  }, []);
+
+  useEffect(() => {
     dispatch(getTrending({ mediaType, timeWindow, languageValue: selectedLanguage }));
   }, [timeWindow, mediaType, selectedLanguage]);
 
@@ -42,7 +55,6 @@ const Home = (): React.ReactElement => {
         <ul style={{ display: 'flex', overflowX: 'scroll' }}>
           {movies.map(movie => (
             <li key={movie.id} style={{ width: '33%', margin: '10px' }}>
-              {/* <NavLink to={`/movie/${movie.id}`}> */}
               <img
                 style={{ objectFit: 'cover', height: '200px' }}
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
@@ -50,7 +62,6 @@ const Home = (): React.ReactElement => {
               />
               <button onClick={() => getMovieDetails(movie.id)}>Movie</button>
               <h3>{movie.title || movie.name}</h3>
-              {/* </NavLink> */}
             </li>
           ))}
         </ul>

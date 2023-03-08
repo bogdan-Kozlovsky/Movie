@@ -1,7 +1,5 @@
 enum PATHS {
-  LOGIN = '/',
-  REGISTRATION = '/register',
-  HOME = '/home',
+  HOME = '/',
   SEARCH = `/search`,
   MOVIE = `/movie`,
 }

@@ -11,6 +11,8 @@ export const createSessionUser = createAsyncThunk(
     const { data }: AxiosResponse<AuthenticationSessionNewResponse> =
       await authenticationApi.createSession(token);
 
+    localStorage.setItem('session_id', data.session_id);
+
     if (data.success) {
       dispatch(getAccount(data.session_id));
     }

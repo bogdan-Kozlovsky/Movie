@@ -21,12 +21,10 @@ const DropdownMenu = ({
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMouseEnter = (): void => {
-    console.log('yes');
     setIsOpen(true);
   };
 
   const handleMouseLeave = (): void => {
-    console.log('not');
     setIsOpen(false);
   };
 
@@ -44,7 +42,6 @@ const DropdownMenu = ({
       >
         {buttonText}
         <div className={`${styles.dropdownMenu} ${isOpen && styles.show}`}>
-          {/* <div className={`${styles.dropdownMenu} ${styles.show}`}> */}
           <ul>
             {items.map(item => (
               <li

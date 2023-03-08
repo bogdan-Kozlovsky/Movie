@@ -53,6 +53,4 @@ export { searchCollection } from './search/asyncThunk/searchCollection';
 export { searchCompanies } from './search/asyncThunk/searchCompanies';
 export { searchKeywords } from './search/asyncThunk/searchKeywords';
 
-export { createSessionUser } from './authentication/asyncThunk/createSessionUser';
-export { setLoginUser } from './authentication/asyncThunk/setLoginUser';
-export { getToken } from './authentication/asyncThunk/getToken';
+export { createSessionUser, getToken, logoutAccount } from './authentication';
