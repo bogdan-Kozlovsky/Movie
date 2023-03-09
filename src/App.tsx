@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { RoutesNavigation } from './routes/RoutesNavigation';
-import { Container } from './views/components';
+import { Layout } from './views/components';
 
 const App = (): React.ReactElement => {
   return (
-    <Container>
+    <Layout>
       <RoutesNavigation />
-    </Container>
+    </Layout>
   );
 };
 

@@ -63,18 +63,20 @@ const LanguageSelect = (): React.ReactElement => {
             ref={searchRef}
             placeholder="Search language"
           />
+          <ul className={styles.language__option_list}>
+            {filteredLanguages.map(({ english_name: englishName, iso_639_1: value }) => (
+              <li
+                key={value}
+                className={`${styles.language__option} ${
+                  value === selectedLanguage ? styles.selected : ''
+                }`}
+                onClick={() => handleOptionClick(value)}
+              >
+                {`${englishName} (${value}-${value.toUpperCase()})`}
+              </li>
+            ))}
+          </ul>
         </div>
-        {filteredLanguages.map(({ english_name: englishName, iso_639_1: value }) => (
-          <div
-            key={value}
-            className={`${styles.language__option} ${
-              value === selectedLanguage ? styles.selected : ''
-            }`}
-            onClick={() => handleOptionClick(value)}
-          >
-            {`${englishName} (${value}-${value.toUpperCase()})`}
-          </div>
-        ))}
       </div>
     </div>
   );

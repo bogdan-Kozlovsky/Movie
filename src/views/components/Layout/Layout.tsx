@@ -8,11 +8,11 @@ type ContainerProps = {
   children: React.ReactNode;
 };
 
-const Container = ({ children }: ContainerProps): ReactElement => (
+const Layout = ({ children }: ContainerProps): ReactElement => (
   <div className={styles.wrapper}>
     <Header />
     <main className={styles.main}>{children}</main>
   </div>
 );
 
-export { Container };
+export { Layout };

@@ -1,0 +1,26 @@
+.avatar {
+  position: relative;
+
+  &__img {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    background-color: var(--color-dark-light);
+    color: var(--color-white);
+    z-index: 1;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  &__content {
+
+  }
+}

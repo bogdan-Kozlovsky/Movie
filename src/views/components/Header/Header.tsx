@@ -1,19 +1,13 @@
 import React from 'react';
 
-import { authenticationApi } from '../../../api';
 import logo from '../../../assets/icon/logo.svg';
-import { useAppDispatch, useAppSelector } from '../../../hooks';
-import { logoutAccount, selectSetIsLoginUser } from '../../../store';
-import { setIsLoginUser } from '../../../store/features/authentication/slices';
+import { LanguageSelect } from '../LanguageSelect';
 
+import { AvatarMenu } from './AvatarMenu';
 import DropdownMenu from './dropdownMenu/DropdownMenu';
 import styles from './styles.module.scss';
 
 const Header = (): React.ReactElement => {
-  const isLoginAccount = useAppSelector(selectSetIsLoginUser);
-
-  const dispatch = useAppDispatch();
-
   const dropdownItemsMovie = [
     { label: 'Популярні', value: '#' },
     { label: 'Зараз у ефірі', value: '#' },
@@ -40,33 +34,6 @@ const Header = (): React.ReactElement => {
 
   const handleItemPerson = (link: string): void => {
     console.log(`Link clicked: ${link}`);
-  };
-
-  const onLogoutAccountClick = (): void => {
-    const sessionId = localStorage.getItem('session_id');
-
-    if (sessionId) {
-      dispatch(logoutAccount(sessionId));
-      dispatch(setIsLoginUser(false));
-    }
-  };
-
-  const getRequestToken = async (): Promise<void> => {
-    const response = await authenticationApi.fetchToken();
-
-    localStorage.setItem('token', response.data.request_token);
-
-    return response.data.request_token;
-  };
-
-  const handleAuthentication = async (): Promise<void> => {
-    try {
-      const requestToken = await getRequestToken();
-
-      window.location.href = `https://www.themoviedb.org/authenticate/${requestToken}?redirect_to=http://localhost:3000`;
-    } catch (error) {
-      console.error(error);
-    }
   };
 
   return (
@@ -97,13 +64,12 @@ const Header = (): React.ReactElement => {
                 />
               </ul>
             </div>
-            {isLoginAccount ? (
-              <button onClick={onLogoutAccountClick}>logout</button>
-            ) : (
-              <button onClick={handleAuthentication}>login</button>
-            )}
+            <div className={styles.header__wrapper_right}>
+              <LanguageSelect />
+
+              <AvatarMenu />
+            </div>
           </div>
-          {/* <LanguageSelect /> */}
         </div>
       </div>
     </div>
