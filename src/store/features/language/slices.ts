@@ -3,13 +3,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootLanguage } from './types';
 
 type initialStateType = {
-  selectedLanguageValue: string;
+  selectedLanguageValue: string | null;
   selectedLanguages: RootLanguage[] | [];
 };
 const slices = createSlice({
   name: 'language',
   initialState: {
-    selectedLanguageValue: 'en',
+    selectedLanguageValue: localStorage.getItem('languageValue'),
     selectedLanguages: [],
   },
   reducers: {

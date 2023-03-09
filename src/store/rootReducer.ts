@@ -7,13 +7,13 @@ import {
   slicesTv,
   slicesCompanies,
   slicesKeywords,
+  account,
+  slicesAuthentication,
+  movie,
+  trending,
+  language,
 } from './features';
-import { account } from './features/account/slices';
-import { slicesAuthentication } from './features/authentication/slices';
 import { global } from './features/global/slices';
-import { language } from './features/language/slices';
-import { movie } from './features/movie/slices';
-import { trending } from './features/trending/slices';
 
 export const rootReducer = combineReducers({
   trending,

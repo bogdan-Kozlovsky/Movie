@@ -8,7 +8,7 @@ import { RootTrending } from '../types';
 type paramsType = {
   mediaType: string;
   timeWindow: string;
-  languageValue: string;
+  languageValue: string | null;
 };
 
 export const getTrending = createAsyncThunk(

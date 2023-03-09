@@ -46,9 +46,11 @@ export {
   setTotalResultsKeywords,
 } from './slices/slicesKeywords';
 
-export { searchMovies } from './asyncThunk/searchMovies';
-export { searchPerson } from './asyncThunk/searchPerson';
-export { searchTv } from './asyncThunk/searchTv';
-export { searchCollection } from './asyncThunk/searchCollection';
-export { searchCompanies } from './asyncThunk/searchCompanies';
-export { searchKeywords } from './asyncThunk/searchKeywords';
+export {
+  searchMovies,
+  searchPerson,
+  searchCollection,
+  searchTv,
+  searchCompanies,
+  searchKeywords,
+} from './asyncThunk';

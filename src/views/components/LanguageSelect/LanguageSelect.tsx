@@ -39,6 +39,8 @@ const LanguageSelect = (): React.ReactElement => {
   };
 
   const handleOptionClick = (language: string): void => {
+    localStorage.setItem('languageValue', language);
+
     dispatch(setLanguageValue(language));
     setIsOpen(false);
   };

@@ -4,7 +4,7 @@ type initialStateType = {
   initialized: boolean;
 };
 const slices = createSlice({
-  name: 'account',
+  name: 'global',
   initialState: {
     initialized: false,
   },

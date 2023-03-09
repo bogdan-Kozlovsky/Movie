@@ -46,11 +46,24 @@ export {
   setTotalResultsKeywords,
 } from './search/slices/slicesKeywords';
 
-export { searchMovies } from './search/asyncThunk/searchMovies';
-export { searchPerson } from './search/asyncThunk/searchPerson';
-export { searchTv } from './search/asyncThunk/searchTv';
-export { searchCollection } from './search/asyncThunk/searchCollection';
-export { searchCompanies } from './search/asyncThunk/searchCompanies';
-export { searchKeywords } from './search/asyncThunk/searchKeywords';
+export {
+  searchKeywords,
+  searchCompanies,
+  searchCollection,
+  searchPerson,
+  searchMovies,
+  searchTv,
+} from './search/asyncThunk';
 
 export { createSessionUser, getToken, logoutAccount } from './authentication';
+export { account, setAccount, getAccount } from './account';
+export { setIsLoginUser, slicesAuthentication } from './authentication';
+export { language, getLanguage, setLanguages, setLanguageValue } from './language';
+export { movie, setMovieDetails, movieDetails } from './movie';
+export {
+  getTrending,
+  setMediaType,
+  trending,
+  setTimeWindow,
+  setTrending,
+} from './trending';

@@ -4,9 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { PATHS } from '../../../enums';
 import { useAppDispatch, useAppSelector } from '../../../hooks';
-import { getTrending, movieDetails } from '../../../store';
-import { createSessionUser } from '../../../store/features';
-import { getAccount } from '../../../store/features/account/asyncThunk/getAccount';
+import { createSessionUser, getAccount, getTrending, movieDetails } from '../../../store';
 import { selectLanguageValue } from '../../../store/features/language/selectors';
 import {
   selectMediaType,

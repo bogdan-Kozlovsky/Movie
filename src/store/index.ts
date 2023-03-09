@@ -4,56 +4,66 @@ export {
   setTotalPagesPerson,
   setPagePerson,
   setPerson,
-} from './features/search/slices/slicesPerson';
-
-export {
-  slicesMovies,
-  setPageMovies,
-  setTotalPagesMovies,
-  setTotalResultsMovies,
-  setMovies,
-} from './features/search/slices/slicesMovies';
-
-export {
-  setTv,
-  slicesTv,
-  setPageTv,
   setTotalPagesTv,
-  setTotalResultsTv,
-} from './features/search/slices/slicesTv';
-
-export {
-  setCollection,
-  setPageCollection,
+  setPageTv,
   setTotalPagesCollection,
   setTotalResultsCollection,
   slicesCollection,
-} from './features/search/slices/slicesCollection';
+  setMovies,
+  setTotalResultsMovies,
+  setTotalResultsKeywords,
+  setKeywords,
+  setTotalPagesKeywords,
+  setTotalResultsTv,
+  setTotalPagesMovies,
+  setPageCollection,
+  setCollection,
+  setPageMovies,
+  slicesMovies,
+  slicesTv,
+  slicesKeywords,
+  setPageKeywords,
+  setTv,
+  slicesCompanies,
+  setCompanies,
+  setPageCompanies,
+  setTotalPagesCompanies,
+  setTotalResultsCompanies,
+} from './features/search/slices';
 
 export {
-  slicesKeywords,
-  setKeywords,
-  setPageKeywords,
-  setTotalPagesKeywords,
-  setTotalResultsKeywords,
-} from './features/search/slices/slicesKeywords';
+  searchCollection,
+  searchTv,
+  searchPerson,
+  searchKeywords,
+  searchCompanies,
+  searchMovies,
+} from './features/search/asyncThunk';
 
-export { selectSetIsLoginUser } from './features/authentication';
+export {
+  selectSetIsLoginUser,
+  logoutAccount,
+  getToken,
+  setIsLoginUser,
+  createSessionUser,
+  slicesAuthentication,
+} from './features/authentication';
 
-export { movie, setMovieDetails } from './features/movie/slices';
+export { movie, setMovieDetails, movieDetails } from './features/movie';
 
-export { trending, setTimeWindow, setMediaType } from './features/trending/slices';
+export {
+  trending,
+  setTimeWindow,
+  setMediaType,
+  setTrending,
+  getTrending,
+} from './features/trending';
 
-export { language, setLanguageValue, setLanguages } from './features/language/slices';
+export {
+  language,
+  setLanguageValue,
+  setLanguages,
+  getLanguage,
+} from './features/language';
 
-export { searchMovies } from './features/search/asyncThunk/searchMovies';
-export { searchPerson } from './features/search/asyncThunk/searchPerson';
-export { searchTv } from './features/search/asyncThunk/searchTv';
-export { searchCollection } from './features/search/asyncThunk/searchCollection';
-export { searchCompanies } from './features/search/asyncThunk/searchCompanies';
-export { searchKeywords } from './features/search/asyncThunk/searchKeywords';
-export { movieDetails } from './features/movie/asyncThunk/movieDetails';
-export { getTrending } from './features/trending/asyncThunk/getTrending';
-export { getLanguage } from './features/language/asyncThunk/getLanguage';
-
-export { createSessionUser, getToken, logoutAccount } from './features/authentication';
+export { account, setAccount, getAccount } from './features/account';

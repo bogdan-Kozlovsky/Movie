@@ -1,0 +1,1 @@
+export { getTrending } from './getTrending';
