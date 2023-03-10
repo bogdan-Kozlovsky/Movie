@@ -13,3 +13,9 @@ export const instance = axios.create({
     // api_key: process.env.REACT_APP_API_KEY,
   },
 });
+
+/*
+як мені отримати рандомну картинку фільму з сервісу https://api.themoviedb.org/3/ api_key: '75df7ca909e962c1330641811fad3003',
+я хочу щоб у мене був блок на екрані і при перезагрузці приходила рандомна картинка, використовуй React library, hooks and typescript , axios
+
+ */

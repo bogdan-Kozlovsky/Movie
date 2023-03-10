@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { PATHS } from '../../../enums';
 import { useAppSelector, useAppDispatch } from '../../../hooks';
+import { useRandomMovieImage } from '../../../hooks/useRandomMovieImage';
 import { searchMovies } from '../../../store';
 import { selectMoviesPage } from '../../../store/features/search/selectors';
 
@@ -23,35 +24,15 @@ const Banner = (): React.ReactElement => {
     dispatch(searchMovies({ query: value, page }));
   };
 
-  // const urls = [
-  //   'https://api.themoviedb.org/3/movie/popular?api_key=75df7ca909e962c1330641811fad3003',
-  //   'https://api.themoviedb.org/3/movie/top_rated?api_key=75df7ca909e962c1330641811fad3003',
-  //   'https://api.themoviedb.org/3/movie/upcoming?api_key=75df7ca909e962c1330641811fad3003',
-  //   'https://api.themoviedb.org/3/tv/popular?api_key=75df7ca909e962c1330641811fad3003',
-  //   'https://api.themoviedb.org/3/tv/top_rated?api_key=75df7ca909e962c1330641811fad3003',
-  //   'https://api.themoviedb.org/3/tv/on_the_air?api_key=75df7ca909e962c1330641811fad3003',
-  //   'https://api.themoviedb.org/3/tv/airing_today?api_key=75df7ca909e962c1330641811fad3003',
-  // ];
-  //
-  // async function fetchData(): Promise<void> {
-  //   try {
-  //     const requests = urls.map(url => instance.get(url));
-  //     const responses = await Promise.all(requests);
-  //     const data = responses.map(response => response.data);
-  //
-  //     console.log(data); // Вивести дані, що повернув сервер
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
-  //
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  const randomPath = useRandomMovieImage();
+
+  const backgroundStyles = {
+    backgroundImage: `url('https://image.tmdb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)${randomPath?.poster_path}'`,
+  };
 
   return (
-    <section className={styles.banner}>
-      <div className={styles.title}>
+    <section style={backgroundStyles} className={styles.banner}>
+      <div>
         <h1>Welcome.</h1>
         <h2>Millions of movies, series and people. Explore now.</h2>
       </div>

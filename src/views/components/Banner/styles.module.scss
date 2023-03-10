@@ -1,8 +1,12 @@
 .banner {
   padding: 15px;
-  min-height: 300px;
+  min-height: 360px;
   background-color: var(--color-dark-lighter);
   border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-white);
 
   > title {
     color: var(--color-white)
