@@ -69,3 +69,11 @@ export {
 export { account, setAccount, getAccount } from './features/account';
 
 export { setRandomPosterPath } from './features/global';
+
+export {
+  setPopular,
+  popular,
+  getPopular,
+  setTotalPagesPopular,
+  setPagePopular,
+} from './features/popular';

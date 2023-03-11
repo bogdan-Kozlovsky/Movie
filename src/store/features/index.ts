@@ -69,3 +69,11 @@ export {
 } from './trending';
 
 export { setRandomPosterPath } from './global';
+
+export {
+  setPopular,
+  popular,
+  getPopular,
+  setPagePopular,
+  setTotalPagesPopular,
+} from './popular';

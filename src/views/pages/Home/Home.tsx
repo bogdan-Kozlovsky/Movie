@@ -11,7 +11,7 @@ import {
   selectTimeWindow,
   selectTrending,
 } from '../../../store/features/trending/selectors';
-import { Banner, Selector, TrendingButton } from '../../components';
+import { Banner, Selector } from '../../components';
 
 const Home = (): React.ReactElement => {
   const dispatch = useAppDispatch();
@@ -46,9 +46,9 @@ const Home = (): React.ReactElement => {
       <div className="container">
         <Banner />
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <h2 style={{ marginRight: '15px' }}>У тренді</h2>
+          <h2 style={{ marginRight: '15px' }}>Trending</h2>
           <Selector />
-          <TrendingButton />
+          {/* <TrendingButton /> */}
         </div>
         <ul style={{ display: 'flex', overflowX: 'scroll' }}>
           {movies.map(movie => (

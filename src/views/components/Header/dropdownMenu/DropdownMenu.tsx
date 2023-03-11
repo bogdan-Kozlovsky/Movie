@@ -1,23 +1,20 @@
 import React, { useState } from 'react';
 
+import { NavLink } from 'react-router-dom';
+
 import styles from './styles.module.scss';
 
 type DropdownItem = {
   label: string;
-  value: string;
+  path: string;
 };
 
 type DropdownMenuProps = {
   buttonText: string;
   items: DropdownItem[];
-  onItemClick: (value: string) => void;
 };
 
-const DropdownMenu = ({
-  buttonText,
-  items,
-  onItemClick,
-}: DropdownMenuProps): React.ReactElement => {
+const DropdownMenu = ({ buttonText, items }: DropdownMenuProps): React.ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMouseEnter = (): void => {
@@ -25,11 +22,6 @@ const DropdownMenu = ({
   };
 
   const handleMouseLeave = (): void => {
-    setIsOpen(false);
-  };
-
-  const handleItemClick = (value: string): void => {
-    onItemClick(value);
     setIsOpen(false);
   };
 
@@ -44,13 +36,8 @@ const DropdownMenu = ({
         <div className={`${styles.dropdownMenu} ${isOpen && styles.show}`}>
           <ul>
             {items.map(item => (
-              <li
-                role="presentation"
-                key={item.label}
-                className={styles.dropdownItem}
-                onClick={() => handleItemClick(item.value)}
-              >
-                {item.label}
+              <li role="presentation" key={item.label} className={styles.dropdownItem}>
+                <NavLink to={item.path}>{item.label}</NavLink>
               </li>
             ))}
           </ul>

@@ -12,6 +12,7 @@ import {
   movie,
   trending,
   language,
+  popular,
 } from './features';
 import { global } from './features/global/slices';
 
@@ -28,4 +29,5 @@ export const rootReducer = combineReducers({
   slicesCollection,
   slicesCompanies,
   slicesKeywords,
+  popular,
 });
