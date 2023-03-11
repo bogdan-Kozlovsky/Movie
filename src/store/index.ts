@@ -67,3 +67,5 @@ export {
 } from './features/language';
 
 export { account, setAccount, getAccount } from './features/account';
+
+export { setRandomPosterPath } from './features/global';

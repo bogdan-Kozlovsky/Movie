@@ -2,6 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosResponse } from 'axios';
 
 import { trendingApi } from '../../../../api';
+import { randomPosterPath } from '../../../../utils/randomPosterPath';
+import { setRandomPosterPath } from '../../global';
 import { setTrending } from '../slices';
 import { RootTrending } from '../types';
 
@@ -21,6 +23,7 @@ export const getTrending = createAsyncThunk(
       languageValue,
     );
 
+    dispatch(setRandomPosterPath(randomPosterPath(response.data.results)));
     dispatch(setTrending(response.data.results));
   },
 );

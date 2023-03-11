@@ -67,3 +67,5 @@ export {
   setTimeWindow,
   setTrending,
 } from './trending';
+
+export { setRandomPosterPath } from './global';

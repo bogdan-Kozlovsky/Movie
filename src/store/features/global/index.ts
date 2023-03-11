@@ -1,0 +1,1 @@
+export { setRandomPosterPath } from './slices';

@@ -3,20 +3,21 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { PATHS } from '../../../enums';
-import { useAppSelector, useAppDispatch } from '../../../hooks';
-import { useRandomMovieImage } from '../../../hooks/useRandomMovieImage';
+import { useAppDispatch, useAppSelector } from '../../../hooks';
 import { searchMovies } from '../../../store';
+import { selectRandomPosterPath } from '../../../store/features/global/selectors';
 import { selectMoviesPage } from '../../../store/features/search/selectors';
 
 import styles from './styles.module.scss';
 
-const Banner = (): React.ReactElement => {
+const Banner = React.memo((): React.ReactElement => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const [value, setValue] = useState<string>('');
 
   const page = useAppSelector(selectMoviesPage);
+  const posterPath = useAppSelector(selectRandomPosterPath);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
@@ -24,10 +25,8 @@ const Banner = (): React.ReactElement => {
     dispatch(searchMovies({ query: value, page }));
   };
 
-  const randomPath = useRandomMovieImage();
-
   const backgroundStyles = {
-    backgroundImage: `url('https://image.tmdb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)${randomPath?.poster_path}'`,
+    backgroundImage: `url('https://image.tmdb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)${posterPath}'`,
   };
 
   return (
@@ -47,6 +46,6 @@ const Banner = (): React.ReactElement => {
       </form>
     </section>
   );
-};
+});
 
 export { Banner };

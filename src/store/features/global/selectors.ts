@@ -1,4 +1,4 @@
 import { AppRootStateType } from '../../types';
 
-export const selectAppInitialized = (state: AppRootStateType): boolean =>
-  state.global.initialized;
+export const selectRandomPosterPath = (state: AppRootStateType): string =>
+  state.global.randomPosterPath;

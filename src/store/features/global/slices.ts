@@ -1,19 +1,20 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type initialStateType = {
-  initialized: boolean;
+  randomPosterPath: string;
 };
+
 const slices = createSlice({
   name: 'global',
   initialState: {
-    initialized: false,
+    randomPosterPath: '',
   },
   reducers: {
-    setInitialized(state: initialStateType, action: PayloadAction<boolean>) {
-      state.initialized = action.payload;
+    setRandomPosterPath(state: initialStateType, action: PayloadAction<string>) {
+      state.randomPosterPath = action.payload;
     },
   },
 });
 
 export const global = slices.reducer;
-export const { setInitialized } = slices.actions;
+export const { setRandomPosterPath } = slices.actions;
