@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../../hooks';
-import { getPopular, setTotalPagesPopular } from '../../../store';
+import { getPopular, setPagePopular } from '../../../store';
 import { selectLanguageValue } from '../../../store/features/language/selectors';
 import {
   selectPagePopular,
   selectPopular,
   selectTotalPagesPopular,
 } from '../../../store/features/popular/selectors';
-import { Paginator } from '../../components';
+import { PopularDescription } from '../../../store/features/popular/types';
+import { Card, Paginator } from '../../components';
+
+import styles from './styles.module.scss';
 
 const Popular = (): React.ReactElement => {
   const selectedLanguage = useAppSelector(selectLanguageValue);
@@ -19,7 +22,7 @@ const Popular = (): React.ReactElement => {
   const dispatch = useAppDispatch();
 
   const onPageChanged = (pageNumber: number): void => {
-    dispatch(setTotalPagesPopular(pageNumber));
+    dispatch(setPagePopular(pageNumber));
   };
 
   useEffect(() => {
@@ -27,9 +30,19 @@ const Popular = (): React.ReactElement => {
   }, [selectedLanguage, page]);
 
   return (
-    <div>
+    <>
+      <div className={styles.list}>
+        {popular?.results.map(card => (
+          <Card<PopularDescription>
+            key={card.id}
+            card={{
+              ...card,
+            }}
+          />
+        ))}
+      </div>
       <Paginator page={page} totalPages={totalPages} onPageChange={onPageChanged} />
-    </div>
+    </>
   );
 };
 

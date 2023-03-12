@@ -6,3 +6,4 @@ export { Paginator } from './Paginator';
 export { Selector } from './Selector';
 export { TrendingButton } from './TrendingButton';
 export { Tab, InitializingLoader } from './UI';
+export { Card } from './Card';
