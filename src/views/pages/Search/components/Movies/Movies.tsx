@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import icon from '../../../../../assets/icon/errorImage.svg';
+import { PATHS } from '../../../../../enums';
 import { useAppSelector, useAppDispatch } from '../../../../../hooks';
-import { searchMovies, setPageMovies } from '../../../../../store';
+import { movieDetails, searchMovies, setPageMovies } from '../../../../../store';
 import {
   selectMovies,
   selectMoviesPage,
@@ -21,6 +22,8 @@ const Movies = (): React.ReactElement => {
   const [searchParams] = useSearchParams();
   const query = searchParams.get('query');
 
+  const navigate = useNavigate();
+
   const movies = useAppSelector(selectMovies);
   const totalResult = useAppSelector(selectMoviesTotalResult);
   const totalPages = useAppSelector(selectMoviesTotalPage);
@@ -28,6 +31,11 @@ const Movies = (): React.ReactElement => {
 
   const onPageChange = (pageNumber: number): void => {
     dispatch(setPageMovies(pageNumber));
+  };
+
+  const getPageMovies = (movieId: number): void => {
+    dispatch(movieDetails(movieId));
+    navigate(`${PATHS.MOVIE}/${movieId}`);
   };
 
   useEffect(() => {
@@ -38,7 +46,7 @@ const Movies = (): React.ReactElement => {
     <ul>
       {movies.map(({ title, id, backdrop_path, release_date, overview }) => {
         return (
-          <li key={id} className={styles.movies__item}>
+          <li onClick={() => getPageMovies(id)} key={id} className={styles.movies__item}>
             <img
               src={
                 backdrop_path ? `https://image.tmdb.org/t/p/w500${backdrop_path} ` : icon

@@ -7,7 +7,7 @@ import { setMovieDetails } from '../slices';
 
 export const movieDetails = createAsyncThunk(
   'movieDetails',
-  async (movieId: number, { dispatch }) => {
+  async (movieId: number | undefined, { dispatch }) => {
     const response: AxiosResponse<MovieDetailsType> = await movieApi.getMovieById(
       movieId,
     );
