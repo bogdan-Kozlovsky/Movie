@@ -43,8 +43,8 @@ const Home = (): React.ReactElement => {
 
   return (
     <div>
+      <Banner />
       <div className="container">
-        <Banner />
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <h2 style={{ marginRight: '15px' }}>Trending</h2>
           <Selector />

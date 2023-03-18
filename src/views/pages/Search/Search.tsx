@@ -6,7 +6,9 @@ import styles from './styles.module.scss';
 const Search = (): React.ReactElement => {
   return (
     <section className={styles.search}>
-      <Tabs />
+      <div className="container">
+        <Tabs />
+      </div>
     </section>
   );
 };

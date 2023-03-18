@@ -31,19 +31,21 @@ const Banner = React.memo((): React.ReactElement => {
 
   return (
     <section style={backgroundStyles} className={styles.banner}>
-      <div>
-        <h1>Welcome.</h1>
-        <h2>Millions of movies, series and people. Explore now.</h2>
+      <div className="container">
+        <div>
+          <h1>Welcome.</h1>
+          <h2>Millions of movies, series and people. Explore now.</h2>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <input
+            value={value}
+            onChange={event => setValue(event.currentTarget.value)}
+            type="text"
+            placeholder="Пошук фільму, серіалу, людини..."
+          />
+          <button>Search</button>
+        </form>
       </div>
-      <form onSubmit={handleSubmit}>
-        <input
-          value={value}
-          onChange={event => setValue(event.currentTarget.value)}
-          type="text"
-          placeholder="Пошук фільму, серіалу, людини..."
-        />
-        <button>Search</button>
-      </form>
     </section>
   );
 });

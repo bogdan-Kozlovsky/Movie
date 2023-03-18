@@ -1,9 +1,15 @@
-.image {
-  border-bottom: 1px solid var(--primaryColor);
-  //background-position: left calc((50vw - 170px) - 340px) top;
-  background-position: left top;
+.movie {
+  background-position: left calc((50vw - 170px) - 340px) top;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(
-  'https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/wVxlmhk4OS2eCr0wTQcM4zJ20ml.jpg')
+  color: var(--color-white);
+
+  &__background {
+    background-image: linear-gradient(to right, rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 31.5, 0.84) 50%, rgba(31.5, 31.5, 31.5, 0.84) 100%);
+  }
+
+  &__image {
+    object-fit: cover;
+    height: 300px;
+  }
 }

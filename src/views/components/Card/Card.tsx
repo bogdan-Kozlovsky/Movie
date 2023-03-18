@@ -1,5 +1,10 @@
 import React from 'react';
 
+import { useNavigate } from 'react-router-dom';
+
+import { PATHS } from '../../../enums';
+import { useAppDispatch } from '../../../hooks';
+import { movieDetails } from '../../../store';
 import { PopularDescription } from '../../../store/features/popular/types';
 
 import styles from './styles.module.scss';
@@ -11,7 +16,11 @@ interface CardProps<T> {
 const Card = <T extends PopularDescription>({
   card,
 }: CardProps<T>): React.ReactElement => {
-  const { title, poster_path, release_date } = card;
+  const { title, poster_path, release_date, id } = card;
+
+  const navigate = useNavigate();
+
+  const dispatch = useAppDispatch();
 
   const date = new Date(release_date);
   const options: Intl.DateTimeFormatOptions = {
@@ -22,8 +31,13 @@ const Card = <T extends PopularDescription>({
 
   const formattedDate = date.toLocaleDateString('en-US', options);
 
+  const getMovieDetails = (movieId: number): void => {
+    dispatch(movieDetails(movieId));
+    navigate(`${PATHS.MOVIE}/${movieId}`);
+  };
+
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={() => getMovieDetails(id)}>
       <img
         className={styles.card__img}
         src={`https://image.tmdb.org/t/p/w500/${poster_path}`}

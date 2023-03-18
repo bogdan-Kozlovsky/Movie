@@ -4,11 +4,11 @@ import { Header } from '../Header';
 
 import styles from './styles.module.scss';
 
-type ContainerProps = {
+type Props = {
   children: React.ReactNode;
 };
 
-const Layout = ({ children }: ContainerProps): ReactElement => (
+const Layout = ({ children }: Props): ReactElement => (
   <div className={styles.wrapper}>
     <Header />
     <main className={styles.main}>{children}</main>

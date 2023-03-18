@@ -30,7 +30,7 @@ const Popular = (): React.ReactElement => {
   }, [selectedLanguage, page]);
 
   return (
-    <>
+    <div className="container">
       <div className={styles.list}>
         {popular?.results.map(card => (
           <Card<PopularDescription>
@@ -42,7 +42,7 @@ const Popular = (): React.ReactElement => {
         ))}
       </div>
       <Paginator page={page} totalPages={totalPages} onPageChange={onPageChanged} />
-    </>
+    </div>
   );
 };
 
