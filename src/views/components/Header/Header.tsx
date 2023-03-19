@@ -12,10 +12,10 @@ import styles from './styles.module.scss';
 
 const Header = (): React.ReactElement => {
   const dropdownItemsMovie = [
-    { label: 'Популярні', path: PATHS.POPULAR },
-    { label: 'Зараз у ефірі', path: '#' },
-    { label: 'Очікувані', path: '#' },
-    { label: 'Рейтингові', path: '#' },
+    { label: 'Popular', path: PATHS.POPULAR },
+    { label: 'Now Playing', path: PATHS.NOW_PLAYING },
+    { label: 'Upcoming', path: '#' },
+    { label: 'Top Rated', path: '#' },
   ];
 
   const dropdownItemsSerials = [
@@ -37,7 +37,7 @@ const Header = (): React.ReactElement => {
                 <img className={styles.header__logo} src={logo} alt="Logo" />
               </NavLink>
               <ul className={styles.dropdown__list}>
-                <DropdownMenu buttonText="Фільми" items={dropdownItemsMovie} />
+                <DropdownMenu buttonText="Movies" items={dropdownItemsMovie} />
 
                 <DropdownMenu buttonText="Серіали" items={dropdownItemsSerials} />
 

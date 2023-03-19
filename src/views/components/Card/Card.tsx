@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { PATHS } from '../../../enums';
 import { useAppDispatch } from '../../../hooks';
 import { movieDetails } from '../../../store';
-import { PopularDescription } from '../../../store/features/popular/types';
+import { MovieDescription } from '../../../store/features/movies/types';
 
 import styles from './styles.module.scss';
 
@@ -13,9 +13,7 @@ interface CardProps<T> {
   card: T;
 }
 
-const Card = <T extends PopularDescription>({
-  card,
-}: CardProps<T>): React.ReactElement => {
+const Card = <T extends MovieDescription>({ card }: CardProps<T>): React.ReactElement => {
   const { title, poster_path, release_date, id } = card;
 
   const navigate = useNavigate();

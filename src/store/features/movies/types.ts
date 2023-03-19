@@ -1,4 +1,4 @@
-export interface PopularDescription {
+export interface MovieDescription {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
@@ -15,9 +15,9 @@ export interface PopularDescription {
   vote_count: number;
 }
 
-export interface RootPopular {
+export interface RootMovies {
   page: number;
-  results: PopularDescription[];
+  results: MovieDescription[];
   total_pages: number;
   total_results: number;
 }

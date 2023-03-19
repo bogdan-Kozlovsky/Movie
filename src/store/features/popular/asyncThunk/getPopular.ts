@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosResponse } from 'axios';
 
-import { popularApi } from '../../../../api/popular/popularApi';
+import { moviesApi } from '../../../../api/movies/moviesApi';
+import { RootMovies } from '../../movies/types';
 import { setPagePopular, setPopular, setTotalPagesPopular } from '../slices';
-import { RootPopular } from '../types';
 
 export const getPopular = createAsyncThunk(
   'getPopular',
@@ -11,7 +11,7 @@ export const getPopular = createAsyncThunk(
     { languageValue, page }: { languageValue: string | null; page: number },
     { dispatch },
   ) => {
-    const response: AxiosResponse<RootPopular> = await popularApi.popular(
+    const response: AxiosResponse<RootMovies> = await moviesApi.popular(
       languageValue,
       page,
     );

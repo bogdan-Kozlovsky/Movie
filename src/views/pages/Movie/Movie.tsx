@@ -19,7 +19,7 @@ const Movie = (): ReactElement => {
 
   useEffect(() => {
     dispatch(movieDetails(Number(id)));
-  });
+  }, []);
 
   return (
     <div style={backgroundStyles} className={styles.movie}>

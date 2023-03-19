@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 
-import { useAppDispatch, useAppSelector } from '../../../hooks';
-import { getPopular, setPagePopular } from '../../../store';
-import { selectLanguageValue } from '../../../store/features/language/selectors';
+import { useAppDispatch, useAppSelector } from '../../../../hooks';
+import { getPopular, setPagePopular } from '../../../../store';
+import { selectLanguageValue } from '../../../../store/features/language/selectors';
+import { MovieDescription } from '../../../../store/features/movies/types';
 import {
   selectPagePopular,
   selectPopular,
   selectTotalPagesPopular,
-} from '../../../store/features/popular/selectors';
-import { PopularDescription } from '../../../store/features/popular/types';
-import { Card, Paginator } from '../../components';
+} from '../../../../store/features/popular/selectors';
+import { Card, Paginator } from '../../../components';
 
 import styles from './styles.module.scss';
 
@@ -33,7 +33,7 @@ const Popular = (): React.ReactElement => {
     <div className="container">
       <div className={styles.list}>
         {popular?.results.map(card => (
-          <Card<PopularDescription>
+          <Card<MovieDescription>
             key={card.id}
             card={{
               ...card,

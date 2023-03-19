@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { RootPopular } from './types';
+import { RootMovies } from '../movies/types';
 
 type initialStateType = {
-  popular: RootPopular | null;
+  popular: RootMovies | null;
   page: number;
   totalPages: number;
 };
@@ -16,7 +16,7 @@ const slices = createSlice({
     totalPages: 0,
   },
   reducers: {
-    setPopular(state: initialStateType, action: PayloadAction<RootPopular>) {
+    setPopular(state: initialStateType, action: PayloadAction<RootMovies>) {
       state.popular = action.payload;
     },
     setPagePopular(state: initialStateType, action: PayloadAction<number>) {

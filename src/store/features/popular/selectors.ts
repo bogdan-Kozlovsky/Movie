@@ -1,8 +1,7 @@
 import { AppRootStateType } from '../../types';
+import { RootMovies } from '../movies/types';
 
-import { RootPopular } from './types';
-
-const selectPopular = (state: AppRootStateType): RootPopular | null =>
+const selectPopular = (state: AppRootStateType): RootMovies | null =>
   state.popular.popular;
 const selectPagePopular = (state: AppRootStateType): number => state.popular.page;
 const selectTotalPagesPopular = (state: AppRootStateType): number =>

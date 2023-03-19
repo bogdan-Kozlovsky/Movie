@@ -77,3 +77,11 @@ export {
   setTotalPagesPopular,
   setPagePopular,
 } from './features/popular';
+
+export {
+  setNowPlaying,
+  setTotalPagesNowPlaying,
+  nowPlaying,
+  setPageNowPlaying,
+  getNowPlaying,
+} from './features/movies';
