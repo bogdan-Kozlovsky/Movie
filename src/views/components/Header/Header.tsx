@@ -7,7 +7,7 @@ import { PATHS } from '../../../enums';
 import { LanguageSelect } from '../LanguageSelect';
 
 import { AvatarMenu } from './AvatarMenu';
-import DropdownMenu from './dropdownMenu/DropdownMenu';
+import { DropdownMenu } from './DropdownMenu';
 import styles from './styles.module.scss';
 
 const Header = (): React.ReactElement => {

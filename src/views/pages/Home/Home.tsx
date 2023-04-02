@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { PATHS } from '../../../enums';
 import { useAppDispatch, useAppSelector } from '../../../hooks';
 import { createSessionUser, getAccount, getTrending, movieDetails } from '../../../store';
+import { getActorsByMovieId } from '../../../store/features/actors/asyncThunk/actors';
 import { selectLanguageValue } from '../../../store/features/language/selectors';
 import {
   selectMediaType,
@@ -22,6 +23,7 @@ const Home = (): React.ReactElement => {
   const selectedLanguage = useAppSelector(selectLanguageValue);
 
   const getMovieDetails = (movieId: number): void => {
+    dispatch(getActorsByMovieId(movieId));
     dispatch(movieDetails(movieId));
     navigate(`${PATHS.MOVIE}/${movieId}`);
   };
