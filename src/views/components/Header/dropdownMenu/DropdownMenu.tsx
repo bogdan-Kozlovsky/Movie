@@ -47,4 +47,4 @@ const DropdownMenu = ({ buttonText, items }: DropdownMenuProps): React.ReactElem
   );
 };
 
-export default DropdownMenu;
+export { DropdownMenu };

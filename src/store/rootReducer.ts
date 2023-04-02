@@ -15,6 +15,7 @@ import {
   popular,
   nowPlaying,
 } from './features';
+import { actors } from './features/actors/slices';
 import { global } from './features/global/slices';
 
 export const rootReducer = combineReducers({
@@ -32,4 +33,5 @@ export const rootReducer = combineReducers({
   slicesKeywords,
   popular,
   nowPlaying,
+  actors,
 });

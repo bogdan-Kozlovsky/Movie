@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Movies, Person, TV, Collection, Companies, Keywords } from '..';
+import { Movies, Person, Collection, Companies, Keywords } from '..';
 import { Tab } from '../../../../components';
 
 import styles from './styles.module.scss';
