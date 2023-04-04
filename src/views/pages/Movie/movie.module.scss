@@ -13,22 +13,70 @@
     padding: 30px 10px;
   }
 
-  &__image {
+  &__poster {
     object-fit: cover;
-    height: 450px;
-    width: 300px;
-    border-radius: 8px;
+    height: 550px;
+    width: 400px;
+    min-width: 400px;
+    border-radius: 10px;
   }
+
+  &__image {
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    border-width: 0px;
+    outline: none;
+  }
+
   &__info {
     padding-left: 40px;
     display: flex;
-    //align-items: center;
     flex-wrap: wrap;
   }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      opacity: 0.8;
+      font-weight: 400;
+    }
+  }
 }
+
+.facts {
+  display: flex;
+  margin-top: 5px;
+}
+
+.content {
+  &:before {
+    content: '\2022';
+    align-items: center;
+    margin: 0 8px;
+
+  }
+}
+
+.tagline {
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.overview {
+  margin-bottom: 10px;
+}
+
 .title__actors {
   margin-bottom: 20px;
 }
+
 .list {
   width: 100%;
   display: flex;

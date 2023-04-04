@@ -22,6 +22,7 @@ export interface MovieDetailsType {
   vote_count: number;
   runtime: number;
   revenue: number;
+  tagline: string;
 }
 
 export interface RootMoviesType {

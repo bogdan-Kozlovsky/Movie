@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect } from 'react';
 
-import { useNavigate, useParams } from 'react-router-dom';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
 
 import { PATHS } from '../../../enums';
 import { useAppDispatch, useAppSelector } from '../../../hooks';
@@ -29,6 +29,19 @@ const Movie = (): ReactElement => {
     navigate(`${PATHS.MOVIE}/${movieId}`);
   };
 
+  const date = movie.release_date ? new Date(movie.release_date) : null;
+  const releaseYear = date?.getFullYear();
+  const releaseDateFormat = date && movie.release_date.replace(/-/g, '/');
+
+  function getTimeFromMins(): any {
+    const hours = Math.trunc(movie.runtime / 60);
+    const minutes = movie.runtime % 60;
+
+    return `${hours}h ${minutes}m`;
+  }
+
+  const runTime = getTimeFromMins();
+
   useEffect(() => {
     dispatch(movieDetails(Number(id)));
     dispatch(getActorsByMovieId(Number(id)));
@@ -39,19 +52,38 @@ const Movie = (): ReactElement => {
       <div style={backgroundStyles} className={styles.movie}>
         <div className={styles.movie__background}>
           <div className={`container ${styles.movie__content}`}>
-            <img
-              className={styles.movie__image}
-              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-              alt={movie.title}
-            />
+            <div className={styles.movie__poster}>
+              <img
+                className={styles.movie__image}
+                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                alt={movie.title}
+              />
+            </div>
             <div className={styles.movie__info}>
-              <div>
-                <h2>{movie.original_title}</h2>
-                <span>{movie.release_date}</span>
-                <span>{movie.revenue}</span>
+              <div className={styles.movie__title}>
+                <h2>
+                  {movie.original_title}
+                  <span> ({releaseYear})</span>
+                </h2>
+                <ul className={styles.facts}>
+                  <li>{movie.release_date && releaseDateFormat}</li>
+                  <li className={styles.content}>
+                    {movie.genres &&
+                      movie.genres.map(el => {
+                        return (
+                          <NavLink key={el.id} to={`${PATHS.MOVIE}/${movie.id}`}>
+                            {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
+                            {el.name} <>,&nbsp;</>
+                          </NavLink>
+                        );
+                      })}
+                  </li>
+                  <li className={styles.content}>{runTime}</li>
+                </ul>
               </div>
               <div>
-                <h3>Overview</h3>
+                <h3 className={styles.tagline}>{movie.tagline}</h3>
+                <h3 className={styles.overview}>Overview</h3>
                 <p>{movie.overview}</p>
               </div>
             </div>
