@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { PATHS } from '../../../enums';
 import { useAppDispatch, useAppSelector } from '../../../hooks';
@@ -12,11 +12,12 @@ import {
   selectTimeWindow,
   selectTrending,
 } from '../../../store/features/trending/selectors';
-import { Banner, Selector } from '../../components';
+import { Banner, Card, Selector } from '../../components';
+
+import style from './home.module.scss';
 
 const Home = (): React.ReactElement => {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
   const movies = useAppSelector(selectTrending);
   const mediaType = useAppSelector(selectMediaType);
   const timeWindow = useAppSelector(selectTimeWindow);
@@ -25,7 +26,6 @@ const Home = (): React.ReactElement => {
   const getMovieDetails = (movieId: number): void => {
     dispatch(getActorsByMovieId(movieId));
     dispatch(movieDetails(movieId));
-    navigate(`${PATHS.MOVIE}/${movieId}`);
   };
 
   useEffect(() => {
@@ -52,19 +52,19 @@ const Home = (): React.ReactElement => {
           <Selector />
           {/* <TrendingButton /> */}
         </div>
-        <ul style={{ display: 'flex', overflowX: 'scroll' }}>
+        <div className={style.cards}>
           {movies.map(movie => (
-            <li key={movie.id} style={{ width: '33%', margin: '10px' }}>
-              <img
-                style={{ objectFit: 'cover', height: '200px' }}
-                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                alt={movie.title}
+            <NavLink to={`${PATHS.MOVIE}/${movie.id}`} key={movie.id}>
+              <Card
+                id={movie.id}
+                title={movie.title}
+                path={movie.poster_path}
+                onClickCard={getMovieDetails}
+                release_date={movie.release_date}
               />
-              <button onClick={() => getMovieDetails(movie.id)}>Movie</button>
-              <h3>{movie.title || movie.name}</h3>
-            </li>
+            </NavLink>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

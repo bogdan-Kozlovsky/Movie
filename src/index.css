@@ -58,3 +58,7 @@ h2 {
 p {
     font-size: var(--fs-regular);
 }
+a {
+    text-decoration: none;
+    color: inherit;
+}
